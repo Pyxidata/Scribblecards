@@ -2,7 +2,7 @@
   <img src="https://raw.githubusercontent.com/KevinM1031/Scribblecards/master/app/src/main/res/mipmap-xxxhdpi/ic_launcher_round.webp" alt="Icon" title="icon">
 </p>
 
-<h1 class="code-line">
+<h1>
   Description
 </h1>
 
@@ -20,13 +20,25 @@
   Korean option is available as well.
 </p>
 
-<h1 class="code-line">
+<h1>
+  Completeness: 🟢🟢🟢🟢⚪
+</h1>
+
+<dl>
+  <dd>🔵🔵🔵🔵🔵: Features are ready and have gone through plenty of testing.</dd>
+  <dd>🟢🟢🟢🟢⚪: The features are there, but I haven't tested them thoroughly.</dd>
+  <dd>🟡🟡🟡⚪⚪: It's got the basic features. Expect some bugs.</dd>
+  <dd>🟠🟠⚪⚪⚪: Lacking most of the features. I wouldn't recommend trying it out.</dd>
+  <dd>🔴⚪⚪⚪⚪: I'm not sure if this would even compile.</dd>
+</dl>
+
+<h1>
   Requirements
 </h1>
 
 Targets Android 8.1 SDK (API level 27) or above
 
-<h1 class="code-line">
+<h1>
   Development
 </h1>
 
