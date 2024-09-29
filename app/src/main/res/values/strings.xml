@@ -1,0 +1,175 @@
+<resources>
+    <string name="app_name">Scribblecards</string>
+
+    <string name="close">Close</string>
+    <string name="cancel">Cancel</string>
+    <string name="confirm">Confirm</string>
+    <string name="save">Save</string>
+    <string name="save_changes">Save changes</string>
+    <string name="selected_">&#160;Selected</string>
+    <string name="move">Move</string>
+    <string name="import_">Import</string>
+    <string name="link">Link</string>
+    <string name="create">Create</string>
+    <string name="remove">Remove</string>
+    <string name="delete">Delete</string>
+    <string name="quit">Quit</string>
+    <string name="exit">Exit</string>
+    <string name="restart">Restart</string>
+    <string name="start">Start</string>
+    <string name="plural_suffix">s</string>
+    <string name="day">Day</string>
+    <string name="hour">Hour</string>
+    <string name="minute">Minute</string>
+
+    <string name="e_field_required">This field is required.</string>
+    <string name="e_field_required_sfx">&#160;- this field is required.</string>
+
+    <string name="mms_cards">All cards</string>
+    <string name="mms_priority">Priority decks</string>
+    <string name="mms_priority_remaining">&#160;remaining</string>
+    <string name="mms_settings">Settings</string>
+    <string name="mms_credits">Credits</string>
+    <string name="mms_d_close">Quit app?</string>
+
+    <string name="ss">Settings</string>
+    <string name="ss_mastery">Flashcard mastery</string>
+    <string name="ss_mastery_target">Mastery target</string>
+    <string name="ss_mastery_target_tip">The number of recent "perfect sessions" (in which the card is guessed correctly in one try) required for it to be considered "fully mastered" (100%).</string>
+    <string name="ss_mastery_time">Time affects mastery level</string>
+    <string name="ss_mastery_time_tip">When calculating mastery level, choose whether forgetting studied cards over time should be considered.</string>
+    <string name="ss_mastery_rate">Forgetting rate</string>
+    <string name="ss_mastery_rate_tip">Adjusts the rate at which mastery level decreases over time. At 100%, mastery level is halved every hour. Guessing a card correctly in one try significantly reduces its forgetting rate.</string>
+    <string name="ss_primary">Primary decks</string>
+    <string name="ss_primary_mastery">Maximum mastery level</string>
+    <string name="ss_primary_mastery_tip">Decks at or below this level are considered "first priority" and will appear in the "Priority decks" section.</string>
+    <string name="ss_primary_cooldown">Deck reappearance cooldown</string>
+    <string name="ss_primary_cooldown_tip">Time required after studying a deck for it to be able to appear/reappear in the "Priority decks" section.</string>
+    <string name="ss_language">Language</string>
+    <string name="ss_d_revert">Revert to default values?</string>
+
+    <string name="ds">Dashboard</string>
+    <string name="ds_e_deck_limit">Deck limit reached (maximum&#160;</string>
+    <string name="ds_e_deck_limit_sfx">&#160;decks).</string>
+    <string name="ds_tb_select_bundle">Select destination bundle</string>
+    <string name="ds_ab_create_deck">Create new deck</string>
+    <string name="ds_ab_move_deck">Move decks to new or existing bundle</string>
+    <string name="ds_d_create_bundle">Name for the bundle:</string>
+    <string name="ds_d_bundle_name">Bundle name</string>
+    <string name="ds_d_create_deck">Name for the deck:</string>
+    <string name="ds_d_deck_name">Deck name</string>
+
+    <string name="dk_d_tip">In "Double Difficulty" mode, a card isn\'t considered completed until you have guessed it correctly two times in a row.</string>
+    <string name="dk_e_card_limit">Card limit reached (maximum&#160;</string>
+    <string name="dk_e_card_limit_sfx">&#160;cards).</string>
+    <string name="dk_card_total">Card total</string>
+    <string name="dk_cards_total">Cards total</string>
+    <string name="dk_mastered">mastered</string>
+    <string name="dk_deck_hidden">Deck hidden!</string>
+    <string name="dk_new_deck">New deck!</string>
+    <string name="dk_since_last_studied">since last studied</string>
+    <string name="dk_show_hints">Display hints by default</string>
+    <string name="dk_show_examples">Display examples by default</string>
+    <string name="dk_flip_QnA">Flip questions and answers</string>
+    <string name="dk_double_difficulty">Double Difficulty</string>
+    <string name="dk_d_delete_deck">Delete this deck?</string>
+    <string name="dk_d_no_undo">This action cannot be undone.</string>
+    <string name="dk_d_delete_card">Delete selected card</string>
+
+    <string name="ec">Edit card</string>
+    <string name="ec_question">Question</string>
+    <string name="ec_question_text">Question text</string>
+    <string name="ec_answer">Answer</string>
+    <string name="ec_answer_text">Answer text</string>
+    <string name="ec_hint">Hint (Optional)</string>
+    <string name="ec_hint_text">Hint text</string>
+    <string name="ec_example">Example (Optional)</string>
+    <string name="ec_example_text">Example text</string>
+    <string name="ec_clear_history">Clear card history</string>
+
+    <string name="cc">Create card</string>
+
+    <string name="ic">Import cards</string>
+    <string name="ic_card">&#160;card</string>
+    <string name="ic_cards">&#160;cards</string>
+    <string name="ic_import_from">&#160;- imported from&#160;</string>
+    <string name="ic_imported_from_text">&#160;- imported from text</string>
+    <string name="ic_create_cards">Create cards</string>
+    <string name="ic_preview">Preview (first 2 cards)</string>
+    <string name="ic_question">Question</string>
+    <string name="ic_answer">Answer</string>
+    <string name="ic_hint">Hint</string>
+    <string name="ic_example">Example</string>
+    <string name="ic_e_card_limit">Card limit reached (maximum&#160;</string>
+    <string name="ic_e_card_limit_sfx">&#160;cards).</string>
+    <string name="ic_e_no_cards">No cards found</string>
+
+    <string name="ic_drive">Link to Google Drive</string>
+
+    <string name="ic_csv">Upload .CSV file</string>
+    <string name="ic_csv_tip">Export a spreadsheet as a .CSV file and upload it here to convert it into cards.\n\nFirst, ensure that the spreadsheet contains its questions, answers, hints, and examples in their own columns. Upload the file to this application, and assign the column number to its respective information. If the spreadsheet uses alphabetical notations for its columns, convert it to a number based on its alphabetical order (A=1, B=2, and so on). Check the preview and import.</string>
+    <string name="ic_csv_select_file">Select .CSV file</string>
+    <string name="ic_csv_e_file_empty">&#160;- file is empty.</string>
+    <string name="ic_csv_e_file_incomplete">&#160;- file contains inconsistent data.</string>
+    <string name="ic_csv_e_file_long">&#160;- too many cards (will only import the first&#160;</string>
+    <string name="ic_csv_e_file_long_sfx">&#160;cards).</string>
+    <string name="ic_csv_e_file_large">&#160;- file is too large (maximum:&#160;</string>
+    <string name="ic_csv_e_file_large_sfx">&#160;MB).</string>
+    <string name="ic_csv_e_file_invalid">&#160;- invalid file format.</string>
+    <string name="ic_csv_no_file">File not selected</string>
+    <string name="ic_csv_browse_file">Browse file</string>
+    <string name="ic_csv_column_number">Column number</string>
+    <string name="ic_csv_question_column">Question text column</string>
+    <string name="ic_csv_answer_column">Answer text column</string>
+    <string name="ic_csv_hint_column">Hint text column (optional)</string>
+    <string name="ic_csv_example_column">Example text column (optional)</string>
+
+    <string name="ic_text">Import with text</string>
+    <string name="ic_text_tip">From tables or lists found online, copy and paste the entire text and convert them into cards. For more detailed or complex tasks, we recommend uploading a .CSV file instead.\n\nFirst, copy and paste the desired text. The result will appear as a list of questions and answers (and hints, etc. if included), each separated in its own line. This list is expected to have a recurring pattern (question in line 1, answer in lines 2-3, then next question in line 4, and so on).\n\nIn this case, set "Question text lines" as 1, and set "Answer text lines" as 2-3, and the first card will be created. If present, hints and examples can be added in the same manner. If some lines contain irrelevant informations such as numberings, add them to "Lines to ignore". Assuming that this pattern repeats throughout the entire list, the following lines will automatically be converted into the remaining cards. Check the preview and import.</string>
+    <string name="ic_text_text">Copied text</string>
+    <string name="ic_text_text_tip">Copy and paste text directly from a table, list, etc.</string>
+    <string name="ic_text_e_text_incomplete">text is either incomplete or does not match the line format as defined below.</string>
+    <string name="ic_text_e_text_long">this text creates too many cards (max:&#160;</string>
+    <string name="ic_text_e_text_long_sfx">).</string>
+    <string name="ic_text_line_tip">Split with \',\' and define ranges with \'-\'</string>
+    <string name="ic_text_e_line_overlap">lines cannot overlap.</string>
+    <string name="ic_text_question_lines">Question text lines</string>
+    <string name="ic_text_answer_lines">Answer text lines</string>
+    <string name="ic_text_hint_lines">Hint text lines (optional)</string>
+    <string name="ic_text_example_lines">Example text lines (optional)</string>
+    <string name="ic_text_ignore_lines">Lines to ignore (optional)</string>
+
+    <string name="ic_deck">Bring from decks</string>
+    <string name="ic_deck_bundle">Bundle (optional)</string>
+    <string name="ic_deck_none">None</string>
+    <string name="ic_deck_expand">Expand</string>
+    <string name="ic_deck_deck">Deck</string>
+    <string name="ic_deck_filter_mastery">Filter by mastery level</string>
+    <string name="ic_deck_max_mastery">Maximum mastery level</string>
+    <string name="ic_deck_mastery">Mastery Level</string>
+    <string name="ic_deck_clear_history">Clear history</string>
+
+    <string name="pd">Priority decks</string>
+    <string name="pd_deck_remaining">deck remaining.</string>
+    <string name="pd_decks_remaining">decks remaining.</string>
+    <string name="pd_よしよし">Congratulations! There aren\'t any cards you have to study right now.</string>
+
+    <string name="sss_quit">Quit Session?</string>
+    <string name="sss_record_will_be_lost">Current session record will be lost.</string>
+    <string name="sss_restart">Restart Session?</string>
+    <string name="sss_percent">% Completed</string>
+    <string name="sss_current">Current card:</string>
+    <string name="sss_upcoming">Upcoming cards:</string>
+    <string name="sss_seen">Seen cards:</string>
+    <string name="sss_completed">Completed cards:</string>
+    <string name="sss_new">NEW</string>
+    <string name="sss_hint">See hint</string>
+    <string name="sss_example">See example</string>
+
+    <string name="sms">Session summary</string>
+    <string name="sms_studied">Cards studied:&#160;</string>
+    <string name="sms_perfect">Perfect:&#160;</string>
+    <string name="sms_save">Save session data</string>
+    <string name="sms_save_tip">"By saving session data, your performance during this session will be applied to calculate your mastery level for this deck."</string>
+
+</resources>

@@ -1,0 +1,601 @@
+<html>
+<head>
+<title>ImportCardsScreen.kt</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<style type="text/css">
+.s0 { color: #cf8e6d;}
+.s1 { color: #bcbec4;}
+.s2 { color: #bcbec4;}
+.s3 { color: #6aab73;}
+.s4 { color: #2aacb8;}
+.s5 { color: #7a7e85;}
+</style>
+</head>
+<body bgcolor="#1e1f22">
+<table CELLSPACING=0 CELLPADDING=5 COLS=1 WIDTH="100%" BGCOLOR="#606060" >
+<tr><td><center>
+<font face="Arial, Helvetica" color="#000000">
+ImportCardsScreen.kt</font>
+</center></td></tr></table>
+<pre><span class="s0">package </span><span class="s1">com</span><span class="s2">.</span><span class="s1">example</span><span class="s2">.</span><span class="s1">flashcards</span><span class="s2">.</span><span class="s1">ui</span><span class="s2">.</span><span class="s1">importCards</span>
+
+<span class="s1">import androidx</span><span class="s2">.</span><span class="s1">compose</span><span class="s2">.</span><span class="s1">foundation</span><span class="s2">.</span><span class="s1">ExperimentalFoundationApi</span>
+<span class="s1">import androidx</span><span class="s2">.</span><span class="s1">compose</span><span class="s2">.</span><span class="s1">foundation</span><span class="s2">.</span><span class="s1">background</span>
+<span class="s1">import androidx</span><span class="s2">.</span><span class="s1">compose</span><span class="s2">.</span><span class="s1">foundation</span><span class="s2">.</span><span class="s1">combinedClickable</span>
+<span class="s1">import androidx</span><span class="s2">.</span><span class="s1">compose</span><span class="s2">.</span><span class="s1">foundation</span><span class="s2">.</span><span class="s1">gestures</span><span class="s2">.</span><span class="s1">scrollable</span>
+<span class="s1">import androidx</span><span class="s2">.</span><span class="s1">compose</span><span class="s2">.</span><span class="s1">foundation</span><span class="s2">.</span><span class="s1">layout</span><span class="s2">.</span><span class="s1">Arrangement</span>
+<span class="s1">import androidx</span><span class="s2">.</span><span class="s1">compose</span><span class="s2">.</span><span class="s1">foundation</span><span class="s2">.</span><span class="s1">layout</span><span class="s2">.</span><span class="s1">Box</span>
+<span class="s1">import androidx</span><span class="s2">.</span><span class="s1">compose</span><span class="s2">.</span><span class="s1">foundation</span><span class="s2">.</span><span class="s1">layout</span><span class="s2">.</span><span class="s1">Column</span>
+<span class="s1">import androidx</span><span class="s2">.</span><span class="s1">compose</span><span class="s2">.</span><span class="s1">foundation</span><span class="s2">.</span><span class="s1">layout</span><span class="s2">.</span><span class="s1">Row</span>
+<span class="s1">import androidx</span><span class="s2">.</span><span class="s1">compose</span><span class="s2">.</span><span class="s1">foundation</span><span class="s2">.</span><span class="s1">layout</span><span class="s2">.</span><span class="s1">Spacer</span>
+<span class="s1">import androidx</span><span class="s2">.</span><span class="s1">compose</span><span class="s2">.</span><span class="s1">foundation</span><span class="s2">.</span><span class="s1">layout</span><span class="s2">.</span><span class="s1">fillMaxSize</span>
+<span class="s1">import androidx</span><span class="s2">.</span><span class="s1">compose</span><span class="s2">.</span><span class="s1">foundation</span><span class="s2">.</span><span class="s1">layout</span><span class="s2">.</span><span class="s1">fillMaxWidth</span>
+<span class="s1">import androidx</span><span class="s2">.</span><span class="s1">compose</span><span class="s2">.</span><span class="s1">foundation</span><span class="s2">.</span><span class="s1">layout</span><span class="s2">.</span><span class="s1">height</span>
+<span class="s1">import androidx</span><span class="s2">.</span><span class="s1">compose</span><span class="s2">.</span><span class="s1">foundation</span><span class="s2">.</span><span class="s1">layout</span><span class="s2">.</span><span class="s1">heightIn</span>
+<span class="s1">import androidx</span><span class="s2">.</span><span class="s1">compose</span><span class="s2">.</span><span class="s1">foundation</span><span class="s2">.</span><span class="s1">layout</span><span class="s2">.</span><span class="s1">padding</span>
+<span class="s1">import androidx</span><span class="s2">.</span><span class="s1">compose</span><span class="s2">.</span><span class="s1">foundation</span><span class="s2">.</span><span class="s1">layout</span><span class="s2">.</span><span class="s1">size</span>
+<span class="s1">import androidx</span><span class="s2">.</span><span class="s1">compose</span><span class="s2">.</span><span class="s1">foundation</span><span class="s2">.</span><span class="s1">layout</span><span class="s2">.</span><span class="s1">width</span>
+<span class="s1">import androidx</span><span class="s2">.</span><span class="s1">compose</span><span class="s2">.</span><span class="s1">foundation</span><span class="s2">.</span><span class="s1">layout</span><span class="s2">.</span><span class="s1">wrapContentSize</span>
+<span class="s1">import androidx</span><span class="s2">.</span><span class="s1">compose</span><span class="s2">.</span><span class="s1">foundation</span><span class="s2">.</span><span class="s1">layout</span><span class="s2">.</span><span class="s1">wrapContentWidth</span>
+<span class="s1">import androidx</span><span class="s2">.</span><span class="s1">compose</span><span class="s2">.</span><span class="s1">foundation</span><span class="s2">.</span><span class="s1">rememberScrollState</span>
+<span class="s1">import androidx</span><span class="s2">.</span><span class="s1">compose</span><span class="s2">.</span><span class="s1">foundation</span><span class="s2">.</span><span class="s1">shape</span><span class="s2">.</span><span class="s1">RoundedCornerShape</span>
+<span class="s1">import androidx</span><span class="s2">.</span><span class="s1">compose</span><span class="s2">.</span><span class="s1">foundation</span><span class="s2">.</span><span class="s1">text</span><span class="s2">.</span><span class="s1">KeyboardActions</span>
+<span class="s1">import androidx</span><span class="s2">.</span><span class="s1">compose</span><span class="s2">.</span><span class="s1">foundation</span><span class="s2">.</span><span class="s1">text</span><span class="s2">.</span><span class="s1">KeyboardOptions</span>
+<span class="s1">import androidx</span><span class="s2">.</span><span class="s1">compose</span><span class="s2">.</span><span class="s1">foundation</span><span class="s2">.</span><span class="s1">verticalScroll</span>
+<span class="s1">import androidx</span><span class="s2">.</span><span class="s1">compose</span><span class="s2">.</span><span class="s1">material</span><span class="s2">.</span><span class="s1">icons</span><span class="s2">.</span><span class="s1">Icons</span>
+<span class="s1">import androidx</span><span class="s2">.</span><span class="s1">compose</span><span class="s2">.</span><span class="s1">material</span><span class="s2">.</span><span class="s1">icons</span><span class="s2">.</span><span class="s1">filled</span><span class="s2">.</span><span class="s1">ArrowBack</span>
+<span class="s1">import androidx</span><span class="s2">.</span><span class="s1">compose</span><span class="s2">.</span><span class="s1">material</span><span class="s2">.</span><span class="s1">icons</span><span class="s2">.</span><span class="s1">filled</span><span class="s2">.</span><span class="s1">ArrowDropDown</span>
+<span class="s1">import androidx</span><span class="s2">.</span><span class="s1">compose</span><span class="s2">.</span><span class="s1">material</span><span class="s2">.</span><span class="s1">icons</span><span class="s2">.</span><span class="s1">filled</span><span class="s2">.</span><span class="s1">Clear</span>
+<span class="s1">import androidx</span><span class="s2">.</span><span class="s1">compose</span><span class="s2">.</span><span class="s1">material</span><span class="s2">.</span><span class="s1">icons</span><span class="s2">.</span><span class="s1">filled</span><span class="s2">.</span><span class="s1">Delete</span>
+<span class="s1">import androidx</span><span class="s2">.</span><span class="s1">compose</span><span class="s2">.</span><span class="s1">material</span><span class="s2">.</span><span class="s1">icons</span><span class="s2">.</span><span class="s1">filled</span><span class="s2">.</span><span class="s1">ExitToApp</span>
+<span class="s1">import androidx</span><span class="s2">.</span><span class="s1">compose</span><span class="s2">.</span><span class="s1">material</span><span class="s2">.</span><span class="s1">icons</span><span class="s2">.</span><span class="s1">filled</span><span class="s2">.</span><span class="s1">Home</span>
+<span class="s1">import androidx</span><span class="s2">.</span><span class="s1">compose</span><span class="s2">.</span><span class="s1">material</span><span class="s2">.</span><span class="s1">icons</span><span class="s2">.</span><span class="s1">filled</span><span class="s2">.</span><span class="s1">KeyboardArrowDown</span>
+<span class="s1">import androidx</span><span class="s2">.</span><span class="s1">compose</span><span class="s2">.</span><span class="s1">material</span><span class="s2">.</span><span class="s1">icons</span><span class="s2">.</span><span class="s1">filled</span><span class="s2">.</span><span class="s1">KeyboardArrowUp</span>
+<span class="s1">import androidx</span><span class="s2">.</span><span class="s1">compose</span><span class="s2">.</span><span class="s1">material</span><span class="s2">.</span><span class="s1">icons</span><span class="s2">.</span><span class="s1">filled</span><span class="s2">.</span><span class="s1">List</span>
+<span class="s1">import androidx</span><span class="s2">.</span><span class="s1">compose</span><span class="s2">.</span><span class="s1">material</span><span class="s2">.</span><span class="s1">icons</span><span class="s2">.</span><span class="s1">filled</span><span class="s2">.</span><span class="s1">Search</span>
+<span class="s1">import androidx</span><span class="s2">.</span><span class="s1">compose</span><span class="s2">.</span><span class="s1">material3</span><span class="s2">.</span><span class="s1">BottomAppBar</span>
+<span class="s1">import androidx</span><span class="s2">.</span><span class="s1">compose</span><span class="s2">.</span><span class="s1">material3</span><span class="s2">.</span><span class="s1">Button</span>
+<span class="s1">import androidx</span><span class="s2">.</span><span class="s1">compose</span><span class="s2">.</span><span class="s1">material3</span><span class="s2">.</span><span class="s1">Card</span>
+<span class="s1">import androidx</span><span class="s2">.</span><span class="s1">compose</span><span class="s2">.</span><span class="s1">material3</span><span class="s2">.</span><span class="s1">CardDefaults</span>
+<span class="s1">import androidx</span><span class="s2">.</span><span class="s1">compose</span><span class="s2">.</span><span class="s1">material3</span><span class="s2">.</span><span class="s1">Checkbox</span>
+<span class="s1">import androidx</span><span class="s2">.</span><span class="s1">compose</span><span class="s2">.</span><span class="s1">material3</span><span class="s2">.</span><span class="s1">Divider</span>
+<span class="s1">import androidx</span><span class="s2">.</span><span class="s1">compose</span><span class="s2">.</span><span class="s1">material3</span><span class="s2">.</span><span class="s1">DropdownMenu</span>
+<span class="s1">import androidx</span><span class="s2">.</span><span class="s1">compose</span><span class="s2">.</span><span class="s1">material3</span><span class="s2">.</span><span class="s1">DropdownMenuItem</span>
+<span class="s1">import androidx</span><span class="s2">.</span><span class="s1">compose</span><span class="s2">.</span><span class="s1">material3</span><span class="s2">.</span><span class="s1">ExperimentalMaterial3Api</span>
+<span class="s1">import androidx</span><span class="s2">.</span><span class="s1">compose</span><span class="s2">.</span><span class="s1">material3</span><span class="s2">.</span><span class="s1">Icon</span>
+<span class="s1">import androidx</span><span class="s2">.</span><span class="s1">compose</span><span class="s2">.</span><span class="s1">material3</span><span class="s2">.</span><span class="s1">IconButton</span>
+<span class="s1">import androidx</span><span class="s2">.</span><span class="s1">compose</span><span class="s2">.</span><span class="s1">material3</span><span class="s2">.</span><span class="s1">MaterialTheme</span>
+<span class="s1">import androidx</span><span class="s2">.</span><span class="s1">compose</span><span class="s2">.</span><span class="s1">material3</span><span class="s2">.</span><span class="s1">OutlinedTextField</span>
+<span class="s1">import androidx</span><span class="s2">.</span><span class="s1">compose</span><span class="s2">.</span><span class="s1">material3</span><span class="s2">.</span><span class="s1">Scaffold</span>
+<span class="s1">import androidx</span><span class="s2">.</span><span class="s1">compose</span><span class="s2">.</span><span class="s1">material3</span><span class="s2">.</span><span class="s1">Switch</span>
+<span class="s1">import androidx</span><span class="s2">.</span><span class="s1">compose</span><span class="s2">.</span><span class="s1">material3</span><span class="s2">.</span><span class="s1">Text</span>
+<span class="s1">import androidx</span><span class="s2">.</span><span class="s1">compose</span><span class="s2">.</span><span class="s1">material3</span><span class="s2">.</span><span class="s1">TextButton</span>
+<span class="s1">import androidx</span><span class="s2">.</span><span class="s1">compose</span><span class="s2">.</span><span class="s1">material3</span><span class="s2">.</span><span class="s1">TopAppBar</span>
+<span class="s1">import androidx</span><span class="s2">.</span><span class="s1">compose</span><span class="s2">.</span><span class="s1">material3</span><span class="s2">.</span><span class="s1">TopAppBarDefaults</span><span class="s2">.</span><span class="s1">topAppBarColors</span>
+<span class="s1">import androidx</span><span class="s2">.</span><span class="s1">compose</span><span class="s2">.</span><span class="s1">runtime</span><span class="s2">.</span><span class="s1">Composable</span>
+<span class="s1">import androidx</span><span class="s2">.</span><span class="s1">compose</span><span class="s2">.</span><span class="s1">runtime</span><span class="s2">.</span><span class="s1">collectAsState</span>
+<span class="s1">import androidx</span><span class="s2">.</span><span class="s1">compose</span><span class="s2">.</span><span class="s1">runtime</span><span class="s2">.</span><span class="s1">getValue</span>
+<span class="s1">import androidx</span><span class="s2">.</span><span class="s1">compose</span><span class="s2">.</span><span class="s1">runtime</span><span class="s2">.</span><span class="s1">mutableIntStateOf</span>
+<span class="s1">import androidx</span><span class="s2">.</span><span class="s1">compose</span><span class="s2">.</span><span class="s1">runtime</span><span class="s2">.</span><span class="s1">mutableStateOf</span>
+<span class="s1">import androidx</span><span class="s2">.</span><span class="s1">compose</span><span class="s2">.</span><span class="s1">runtime</span><span class="s2">.</span><span class="s1">remember</span>
+<span class="s1">import androidx</span><span class="s2">.</span><span class="s1">compose</span><span class="s2">.</span><span class="s1">runtime</span><span class="s2">.</span><span class="s1">rememberCoroutineScope</span>
+<span class="s1">import androidx</span><span class="s2">.</span><span class="s1">compose</span><span class="s2">.</span><span class="s1">runtime</span><span class="s2">.</span><span class="s1">setValue</span>
+<span class="s1">import androidx</span><span class="s2">.</span><span class="s1">compose</span><span class="s2">.</span><span class="s1">ui</span><span class="s2">.</span><span class="s1">Alignment</span>
+<span class="s1">import androidx</span><span class="s2">.</span><span class="s1">compose</span><span class="s2">.</span><span class="s1">ui</span><span class="s2">.</span><span class="s1">ExperimentalComposeUiApi</span>
+<span class="s1">import androidx</span><span class="s2">.</span><span class="s1">compose</span><span class="s2">.</span><span class="s1">ui</span><span class="s2">.</span><span class="s1">Modifier</span>
+<span class="s1">import androidx</span><span class="s2">.</span><span class="s1">compose</span><span class="s2">.</span><span class="s1">ui</span><span class="s2">.</span><span class="s1">focus</span><span class="s2">.</span><span class="s1">FocusDirection</span>
+<span class="s1">import androidx</span><span class="s2">.</span><span class="s1">compose</span><span class="s2">.</span><span class="s1">ui</span><span class="s2">.</span><span class="s1">focus</span><span class="s2">.</span><span class="s1">FocusManager</span>
+<span class="s1">import androidx</span><span class="s2">.</span><span class="s1">compose</span><span class="s2">.</span><span class="s1">ui</span><span class="s2">.</span><span class="s1">graphics</span><span class="s2">.</span><span class="s1">Color</span>
+<span class="s1">import androidx</span><span class="s2">.</span><span class="s1">compose</span><span class="s2">.</span><span class="s1">ui</span><span class="s2">.</span><span class="s1">layout</span><span class="s2">.</span><span class="s1">onGloballyPositioned</span>
+<span class="s1">import androidx</span><span class="s2">.</span><span class="s1">compose</span><span class="s2">.</span><span class="s1">ui</span><span class="s2">.</span><span class="s1">platform</span><span class="s2">.</span><span class="s1">LocalDensity</span>
+<span class="s1">import androidx</span><span class="s2">.</span><span class="s1">compose</span><span class="s2">.</span><span class="s1">ui</span><span class="s2">.</span><span class="s1">platform</span><span class="s2">.</span><span class="s1">LocalFocusManager</span>
+<span class="s1">import androidx</span><span class="s2">.</span><span class="s1">compose</span><span class="s2">.</span><span class="s1">ui</span><span class="s2">.</span><span class="s1">res</span><span class="s2">.</span><span class="s1">dimensionResource</span>
+<span class="s1">import androidx</span><span class="s2">.</span><span class="s1">compose</span><span class="s2">.</span><span class="s1">ui</span><span class="s2">.</span><span class="s1">text</span><span class="s2">.</span><span class="s1">input</span><span class="s2">.</span><span class="s1">ImeAction</span>
+<span class="s1">import androidx</span><span class="s2">.</span><span class="s1">compose</span><span class="s2">.</span><span class="s1">ui</span><span class="s2">.</span><span class="s1">text</span><span class="s2">.</span><span class="s1">style</span><span class="s2">.</span><span class="s1">TextAlign</span>
+<span class="s1">import androidx</span><span class="s2">.</span><span class="s1">compose</span><span class="s2">.</span><span class="s1">ui</span><span class="s2">.</span><span class="s1">text</span><span class="s2">.</span><span class="s1">style</span><span class="s2">.</span><span class="s1">TextOverflow</span>
+<span class="s1">import androidx</span><span class="s2">.</span><span class="s1">compose</span><span class="s2">.</span><span class="s1">ui</span><span class="s2">.</span><span class="s1">tooling</span><span class="s2">.</span><span class="s1">preview</span><span class="s2">.</span><span class="s1">Preview</span>
+<span class="s1">import androidx</span><span class="s2">.</span><span class="s1">compose</span><span class="s2">.</span><span class="s1">ui</span><span class="s2">.</span><span class="s1">unit</span><span class="s2">.</span><span class="s1">IntSize</span>
+<span class="s1">import androidx</span><span class="s2">.</span><span class="s1">compose</span><span class="s2">.</span><span class="s1">ui</span><span class="s2">.</span><span class="s1">unit</span><span class="s2">.</span><span class="s1">dp</span>
+<span class="s1">import androidx</span><span class="s2">.</span><span class="s1">compose</span><span class="s2">.</span><span class="s1">ui</span><span class="s2">.</span><span class="s1">unit</span><span class="s2">.</span><span class="s1">sp</span>
+<span class="s1">import androidx</span><span class="s2">.</span><span class="s1">compose</span><span class="s2">.</span><span class="s1">ui</span><span class="s2">.</span><span class="s1">window</span><span class="s2">.</span><span class="s1">Dialog</span>
+<span class="s1">import com</span><span class="s2">.</span><span class="s1">example</span><span class="s2">.</span><span class="s1">flashcards</span><span class="s2">.</span><span class="s1">ui</span><span class="s2">.</span><span class="s1">theme</span><span class="s2">.</span><span class="s1">FlashcardsTheme</span>
+<span class="s1">import androidx</span><span class="s2">.</span><span class="s1">lifecycle</span><span class="s2">.</span><span class="s1">viewmodel</span><span class="s2">.</span><span class="s1">compose</span><span class="s2">.</span><span class="s1">viewModel</span>
+<span class="s1">import com</span><span class="s2">.</span><span class="s1">example</span><span class="s2">.</span><span class="s1">flashcards</span><span class="s2">.</span><span class="s1">R</span>
+<span class="s1">import com</span><span class="s2">.</span><span class="s1">example</span><span class="s2">.</span><span class="s1">flashcards</span><span class="s2">.</span><span class="s1">data</span><span class="s2">.</span><span class="s1">entities</span><span class="s2">.</span><span class="s1">Bundle</span>
+<span class="s1">import com</span><span class="s2">.</span><span class="s1">example</span><span class="s2">.</span><span class="s1">flashcards</span><span class="s2">.</span><span class="s1">data</span><span class="s2">.</span><span class="s1">entities</span><span class="s2">.</span><span class="s1">Deck</span>
+<span class="s1">import com</span><span class="s2">.</span><span class="s1">example</span><span class="s2">.</span><span class="s1">flashcards</span><span class="s2">.</span><span class="s1">data</span><span class="s2">.</span><span class="s1">relations</span><span class="s2">.</span><span class="s1">BundleWithDecks</span>
+<span class="s1">import com</span><span class="s2">.</span><span class="s1">example</span><span class="s2">.</span><span class="s1">flashcards</span><span class="s2">.</span><span class="s1">ui</span><span class="s2">.</span><span class="s1">AppViewModelProvider</span>
+<span class="s1">import com</span><span class="s2">.</span><span class="s1">example</span><span class="s2">.</span><span class="s1">flashcards</span><span class="s2">.</span><span class="s1">ui</span><span class="s2">.</span><span class="s1">deck</span><span class="s2">.</span><span class="s1">ImportCardsViewModel</span>
+<span class="s1">import com</span><span class="s2">.</span><span class="s1">example</span><span class="s2">.</span><span class="s1">flashcards</span><span class="s2">.</span><span class="s1">ui</span><span class="s2">.</span><span class="s1">deck</span><span class="s2">.</span><span class="s1">SubDeck</span>
+<span class="s1">import com</span><span class="s2">.</span><span class="s1">example</span><span class="s2">.</span><span class="s1">flashcards</span><span class="s2">.</span><span class="s1">ui</span><span class="s2">.</span><span class="s1">deck</span><span class="s2">.</span><span class="s1">SubDeckType</span>
+<span class="s1">import com</span><span class="s2">.</span><span class="s1">example</span><span class="s2">.</span><span class="s1">flashcards</span><span class="s2">.</span><span class="s1">ui</span><span class="s2">.</span><span class="s1">editCard</span><span class="s2">.</span><span class="s1">EditCardViewModel</span>
+<span class="s1">import com</span><span class="s2">.</span><span class="s1">example</span><span class="s2">.</span><span class="s1">flashcards</span><span class="s2">.</span><span class="s1">ui</span><span class="s2">.</span><span class="s1">menu</span><span class="s2">.</span><span class="s1">DashboardViewModel</span>
+<span class="s1">import kotlinx</span><span class="s2">.</span><span class="s1">coroutines</span><span class="s2">.</span><span class="s1">CoroutineScope</span>
+<span class="s1">import kotlinx</span><span class="s2">.</span><span class="s1">coroutines</span><span class="s2">.</span><span class="s1">launch</span>
+
+<span class="s1">@OptIn</span><span class="s2">(</span><span class="s1">ExperimentalMaterial3Api::</span><span class="s0">class</span><span class="s2">, </span><span class="s1">ExperimentalFoundationApi::</span><span class="s0">class</span><span class="s2">)</span>
+<span class="s1">@Composable</span>
+<span class="s0">fun </span><span class="s1">ImportCardsScreen </span><span class="s2">(</span>
+    <span class="s1">viewModel: ImportCardsViewModel </span><span class="s2">= </span><span class="s1">viewModel</span><span class="s2">(</span><span class="s1">factory </span><span class="s2">= </span><span class="s1">AppViewModelProvider</span><span class="s2">.</span><span class="s1">Factory</span><span class="s2">),</span>
+    <span class="s1">onBackButtonClicked: </span><span class="s2">() -&gt; </span><span class="s1">Unit</span><span class="s2">,</span>
+<span class="s2">) {</span>
+
+    <span class="s0">val </span><span class="s1">uiState by viewModel</span><span class="s2">.</span><span class="s1">uiState</span><span class="s2">.</span><span class="s1">collectAsState</span><span class="s2">()</span>
+    <span class="s0">val </span><span class="s1">coroutineScope </span><span class="s2">= </span><span class="s1">rememberCoroutineScope</span><span class="s2">()</span>
+    <span class="s0">val </span><span class="s1">focusManager </span><span class="s2">= </span><span class="s1">LocalFocusManager</span><span class="s2">.</span><span class="s1">current</span>
+
+    <span class="s1">Scaffold</span><span class="s2">(</span>
+        <span class="s1">topBar </span><span class="s2">= {</span>
+            <span class="s1">TopAppBar</span><span class="s2">(</span>
+                <span class="s1">colors </span><span class="s2">= </span><span class="s1">topAppBarColors</span><span class="s2">(</span>
+                    <span class="s1">containerColor </span><span class="s2">= </span><span class="s1">MaterialTheme</span><span class="s2">.</span><span class="s1">colorScheme</span><span class="s2">.</span><span class="s1">primaryContainer</span><span class="s2">,</span>
+                    <span class="s1">titleContentColor </span><span class="s2">= </span><span class="s1">MaterialTheme</span><span class="s2">.</span><span class="s1">colorScheme</span><span class="s2">.</span><span class="s1">primary</span><span class="s2">,</span>
+                <span class="s2">),</span>
+                <span class="s1">title </span><span class="s2">= {</span>
+                    <span class="s1">Text</span><span class="s2">(</span>
+                        <span class="s1">text </span><span class="s2">= </span><span class="s3">&quot;Import Cards&quot;</span><span class="s2">,</span>
+                        <span class="s1">maxLines </span><span class="s2">= </span><span class="s4">1</span><span class="s2">,</span>
+                        <span class="s1">overflow </span><span class="s2">= </span><span class="s1">TextOverflow</span><span class="s2">.</span><span class="s1">Ellipsis</span>
+                    <span class="s2">)</span>
+                <span class="s2">},</span>
+                <span class="s1">navigationIcon </span><span class="s2">= {</span>
+                    <span class="s1">IconButton</span><span class="s2">(</span><span class="s1">onClick </span><span class="s2">= { </span><span class="s1">onBackButtonClicked</span><span class="s2">() }) {</span>
+                        <span class="s1">Icon</span><span class="s2">(</span>
+                            <span class="s1">imageVector </span><span class="s2">= </span><span class="s1">Icons</span><span class="s2">.</span><span class="s1">Filled</span><span class="s2">.</span><span class="s1">ArrowBack</span><span class="s2">,</span>
+                            <span class="s1">contentDescription </span><span class="s2">= </span><span class="s3">&quot;Back&quot;</span>
+                        <span class="s2">)</span>
+                    <span class="s2">}</span>
+                <span class="s2">},</span>
+                <span class="s1">actions </span><span class="s2">= {},</span>
+            <span class="s2">)</span>
+        <span class="s2">},</span>
+        <span class="s1">bottomBar </span><span class="s2">= {</span>
+            <span class="s1">Column</span><span class="s2">() {</span>
+                <span class="s1">BottomAppBar</span><span class="s2">(</span>
+                    <span class="s1">containerColor </span><span class="s2">= </span><span class="s1">MaterialTheme</span><span class="s2">.</span><span class="s1">colorScheme</span><span class="s2">.</span><span class="s1">primaryContainer</span><span class="s2">,</span>
+                    <span class="s1">contentColor </span><span class="s2">= </span><span class="s1">MaterialTheme</span><span class="s2">.</span><span class="s1">colorScheme</span><span class="s2">.</span><span class="s1">primary</span><span class="s2">,</span>
+                    <span class="s1">actions </span><span class="s2">= {</span>
+                        <span class="s1">Row</span><span class="s2">(</span>
+                            <span class="s1">horizontalArrangement </span><span class="s2">= </span><span class="s1">Arrangement</span><span class="s2">.</span><span class="s1">Center</span><span class="s2">,</span>
+                            <span class="s1">modifier </span><span class="s2">= </span><span class="s1">Modifier</span>
+                                <span class="s2">.</span><span class="s1">fillMaxWidth</span><span class="s2">(),</span>
+                        <span class="s2">) {</span>
+                            <span class="s1">Button</span><span class="s2">(</span>
+                                <span class="s1">onClick </span><span class="s2">= {</span>
+                                    <span class="s1">coroutineScope</span><span class="s2">.</span><span class="s1">launch</span><span class="s2">{</span>
+                                        <span class="s1">viewModel</span><span class="s2">.</span><span class="s1">importAll</span><span class="s2">()</span>
+                                        <span class="s1">viewModel</span><span class="s2">.</span><span class="s1">reset</span><span class="s2">()</span>
+                                        <span class="s1">onBackButtonClicked</span><span class="s2">()</span>
+                                    <span class="s2">}</span>
+                                <span class="s2">},</span>
+                                <span class="s1">enabled </span><span class="s2">= </span><span class="s1">uiState</span><span class="s2">.</span><span class="s1">subDecks</span><span class="s2">.</span><span class="s1">isNotEmpty</span><span class="s2">(),</span>
+                                <span class="s1">modifier </span><span class="s2">= </span><span class="s1">Modifier</span>
+                                    <span class="s2">.</span><span class="s1">width</span><span class="s2">(</span><span class="s4">160</span><span class="s2">.</span><span class="s1">dp</span><span class="s2">),</span>
+                            <span class="s2">) {</span>
+                                <span class="s1">Text</span><span class="s2">(</span>
+                                    <span class="s1">text </span><span class="s2">= </span><span class="s3">&quot;Import all&quot;</span><span class="s2">,</span>
+                                    <span class="s1">textAlign </span><span class="s2">= </span><span class="s1">TextAlign</span><span class="s2">.</span><span class="s1">Center</span><span class="s2">,</span>
+                                    <span class="s1">fontSize </span><span class="s2">= </span><span class="s4">16</span><span class="s2">.</span><span class="s1">sp</span><span class="s2">,</span>
+                                <span class="s2">)</span>
+                            <span class="s2">}</span>
+                        <span class="s2">}</span>
+                    <span class="s2">}</span>
+                <span class="s2">)</span>
+            <span class="s2">}</span>
+        <span class="s2">},</span>
+    <span class="s2">) { </span><span class="s1">innerPadding </span><span class="s2">-&gt;</span>
+
+        <span class="s0">val </span><span class="s1">smallPadding </span><span class="s2">= </span><span class="s1">dimensionResource</span><span class="s2">(</span><span class="s1">R</span><span class="s2">.</span><span class="s1">dimen</span><span class="s2">.</span><span class="s1">padding_small</span><span class="s2">)</span>
+        <span class="s0">val </span><span class="s1">mediumPadding </span><span class="s2">= </span><span class="s1">dimensionResource</span><span class="s2">(</span><span class="s1">R</span><span class="s2">.</span><span class="s1">dimen</span><span class="s2">.</span><span class="s1">padding_medium</span><span class="s2">)</span>
+
+        <span class="s1">Column</span><span class="s2">(</span>
+            <span class="s1">horizontalAlignment </span><span class="s2">= </span><span class="s1">Alignment</span><span class="s2">.</span><span class="s1">CenterHorizontally</span><span class="s2">,</span>
+            <span class="s1">modifier </span><span class="s2">= </span><span class="s1">Modifier</span>
+                <span class="s2">.</span><span class="s1">fillMaxSize</span><span class="s2">()</span>
+                <span class="s2">.</span><span class="s1">padding</span><span class="s2">(</span><span class="s1">innerPadding</span><span class="s2">)</span>
+        <span class="s2">) {</span>
+            <span class="s1">Card</span><span class="s2">(</span>
+                <span class="s1">modifier </span><span class="s2">= </span><span class="s1">Modifier</span>
+                    <span class="s2">.</span><span class="s1">height</span><span class="s2">(</span><span class="s4">100</span><span class="s2">.</span><span class="s1">dp</span><span class="s2">)</span>
+                    <span class="s2">.</span><span class="s1">fillMaxWidth</span><span class="s2">()</span>
+                    <span class="s2">.</span><span class="s1">padding</span><span class="s2">(</span><span class="s1">top </span><span class="s2">= </span><span class="s1">smallPadding</span><span class="s2">, </span><span class="s1">start </span><span class="s2">= </span><span class="s1">smallPadding</span><span class="s2">, </span><span class="s1">end </span><span class="s2">= </span><span class="s1">smallPadding</span><span class="s2">)</span>
+                    <span class="s2">.</span><span class="s1">combinedClickable</span><span class="s2">(</span>
+                        <span class="s1">onClick </span><span class="s2">= { </span><span class="s1">viewModel</span><span class="s2">.</span><span class="s1">toggleBringFromDecksScreen</span><span class="s2">() },</span>
+                    <span class="s2">)</span>
+            <span class="s2">) {</span>
+                <span class="s1">Row</span><span class="s2">(</span>
+                    <span class="s1">verticalAlignment </span><span class="s2">= </span><span class="s1">Alignment</span><span class="s2">.</span><span class="s1">CenterVertically</span><span class="s2">,</span>
+                    <span class="s1">modifier </span><span class="s2">= </span><span class="s1">Modifier</span>
+                        <span class="s2">.</span><span class="s1">fillMaxSize</span><span class="s2">()</span>
+                        <span class="s2">.</span><span class="s1">padding</span><span class="s2">(</span><span class="s1">mediumPadding</span><span class="s2">)</span>
+                <span class="s2">) {</span>
+                    <span class="s1">Icon</span><span class="s2">(</span>
+                        <span class="s1">imageVector </span><span class="s2">= </span><span class="s1">Icons</span><span class="s2">.</span><span class="s1">Default</span><span class="s2">.</span><span class="s1">List</span><span class="s2">,</span>
+                        <span class="s1">contentDescription </span><span class="s2">= </span><span class="s3">&quot;Bring from other decks&quot;</span><span class="s2">,</span>
+                        <span class="s1">modifier </span><span class="s2">= </span><span class="s1">Modifier</span><span class="s2">.</span><span class="s1">size</span><span class="s2">(</span><span class="s4">32</span><span class="s2">.</span><span class="s1">dp</span><span class="s2">)</span>
+                    <span class="s2">)</span>
+                    <span class="s1">Spacer</span><span class="s2">(</span><span class="s1">modifier </span><span class="s2">= </span><span class="s1">Modifier</span><span class="s2">.</span><span class="s1">width</span><span class="s2">(</span><span class="s1">mediumPadding</span><span class="s2">))</span>
+                    <span class="s1">Text</span><span class="s2">(</span>
+                        <span class="s1">text </span><span class="s2">= </span><span class="s3">&quot;Bring from other decks&quot;</span><span class="s2">,</span>
+                        <span class="s1">fontSize </span><span class="s2">= </span><span class="s4">20</span><span class="s2">.</span><span class="s1">sp</span><span class="s2">,</span>
+                    <span class="s2">)</span>
+                <span class="s2">}</span>
+            <span class="s2">}</span>
+
+            <span class="s1">Card</span><span class="s2">(</span>
+                <span class="s1">modifier </span><span class="s2">= </span><span class="s1">Modifier</span>
+                    <span class="s2">.</span><span class="s1">height</span><span class="s2">(</span><span class="s4">100</span><span class="s2">.</span><span class="s1">dp</span><span class="s2">)</span>
+                    <span class="s2">.</span><span class="s1">fillMaxWidth</span><span class="s2">()</span>
+                    <span class="s2">.</span><span class="s1">padding</span><span class="s2">(</span><span class="s1">top </span><span class="s2">= </span><span class="s1">smallPadding</span><span class="s2">, </span><span class="s1">start </span><span class="s2">= </span><span class="s1">smallPadding</span><span class="s2">, </span><span class="s1">end </span><span class="s2">= </span><span class="s1">smallPadding</span><span class="s2">)</span>
+                    <span class="s2">.</span><span class="s1">combinedClickable</span><span class="s2">(</span>
+                        <span class="s1">onClick </span><span class="s2">= { </span><span class="s1">viewModel</span><span class="s2">.</span><span class="s1">toggleImportThroughTextScreen</span><span class="s2">() },</span>
+                    <span class="s2">)</span>
+            <span class="s2">) {</span>
+                <span class="s1">Row</span><span class="s2">(</span>
+                    <span class="s1">verticalAlignment </span><span class="s2">= </span><span class="s1">Alignment</span><span class="s2">.</span><span class="s1">CenterVertically</span><span class="s2">,</span>
+                    <span class="s1">modifier </span><span class="s2">= </span><span class="s1">Modifier</span>
+                        <span class="s2">.</span><span class="s1">fillMaxSize</span><span class="s2">()</span>
+                        <span class="s2">.</span><span class="s1">padding</span><span class="s2">(</span><span class="s1">mediumPadding</span><span class="s2">)</span>
+                <span class="s2">) {</span>
+                    <span class="s1">Icon</span><span class="s2">(</span>
+                        <span class="s1">imageVector </span><span class="s2">= </span><span class="s1">Icons</span><span class="s2">.</span><span class="s1">Default</span><span class="s2">.</span><span class="s1">Search</span><span class="s2">,</span>
+                        <span class="s1">contentDescription </span><span class="s2">= </span><span class="s3">&quot;Import from quizlet&quot;</span><span class="s2">,</span>
+                        <span class="s1">modifier </span><span class="s2">= </span><span class="s1">Modifier</span><span class="s2">.</span><span class="s1">size</span><span class="s2">(</span><span class="s4">32</span><span class="s2">.</span><span class="s1">dp</span><span class="s2">)</span>
+                    <span class="s2">)</span>
+                    <span class="s1">Spacer</span><span class="s2">(</span><span class="s1">modifier </span><span class="s2">= </span><span class="s1">Modifier</span><span class="s2">.</span><span class="s1">width</span><span class="s2">(</span><span class="s1">mediumPadding</span><span class="s2">))</span>
+                    <span class="s1">Text</span><span class="s2">(</span>
+                        <span class="s1">text </span><span class="s2">= </span><span class="s3">&quot;Import from Quizlet&quot;</span><span class="s2">,</span>
+                        <span class="s1">fontSize </span><span class="s2">= </span><span class="s4">20</span><span class="s2">.</span><span class="s1">sp</span><span class="s2">,</span>
+                    <span class="s2">)</span>
+                <span class="s2">}</span>
+            <span class="s2">}</span>
+
+            <span class="s1">Card</span><span class="s2">(</span>
+                <span class="s1">modifier </span><span class="s2">= </span><span class="s1">Modifier</span>
+                    <span class="s2">.</span><span class="s1">height</span><span class="s2">(</span><span class="s4">100</span><span class="s2">.</span><span class="s1">dp</span><span class="s2">)</span>
+                    <span class="s2">.</span><span class="s1">fillMaxWidth</span><span class="s2">()</span>
+                    <span class="s2">.</span><span class="s1">padding</span><span class="s2">(</span><span class="s1">top </span><span class="s2">= </span><span class="s1">smallPadding</span><span class="s2">, </span><span class="s1">start </span><span class="s2">= </span><span class="s1">smallPadding</span><span class="s2">, </span><span class="s1">end </span><span class="s2">= </span><span class="s1">smallPadding</span><span class="s2">)</span>
+                    <span class="s2">.</span><span class="s1">combinedClickable</span><span class="s2">(</span>
+                        <span class="s1">onClick </span><span class="s2">= { </span><span class="s1">viewModel</span><span class="s2">.</span><span class="s1">toggleUploadCsvFileDialog</span><span class="s2">() },</span>
+                    <span class="s2">)</span>
+            <span class="s2">) {</span>
+                <span class="s1">Row</span><span class="s2">(</span>
+                    <span class="s1">verticalAlignment </span><span class="s2">= </span><span class="s1">Alignment</span><span class="s2">.</span><span class="s1">CenterVertically</span><span class="s2">,</span>
+                    <span class="s1">modifier </span><span class="s2">= </span><span class="s1">Modifier</span>
+                        <span class="s2">.</span><span class="s1">fillMaxSize</span><span class="s2">()</span>
+                        <span class="s2">.</span><span class="s1">padding</span><span class="s2">(</span><span class="s1">mediumPadding</span><span class="s2">)</span>
+                <span class="s2">) {</span>
+                    <span class="s1">Icon</span><span class="s2">(</span>
+                        <span class="s1">imageVector </span><span class="s2">= </span><span class="s1">Icons</span><span class="s2">.</span><span class="s1">Default</span><span class="s2">.</span><span class="s1">ExitToApp</span><span class="s2">,</span>
+                        <span class="s1">contentDescription </span><span class="s2">= </span><span class="s3">&quot;Upload .CSV file&quot;</span><span class="s2">,</span>
+                        <span class="s1">modifier </span><span class="s2">= </span><span class="s1">Modifier</span><span class="s2">.</span><span class="s1">size</span><span class="s2">(</span><span class="s4">32</span><span class="s2">.</span><span class="s1">dp</span><span class="s2">)</span>
+                    <span class="s2">)</span>
+                    <span class="s1">Spacer</span><span class="s2">(</span><span class="s1">modifier </span><span class="s2">= </span><span class="s1">Modifier</span><span class="s2">.</span><span class="s1">width</span><span class="s2">(</span><span class="s1">mediumPadding</span><span class="s2">))</span>
+                    <span class="s1">Text</span><span class="s2">(</span>
+                        <span class="s1">text </span><span class="s2">= </span><span class="s3">&quot;Upload .CSV file&quot;</span><span class="s2">,</span>
+                        <span class="s1">fontSize </span><span class="s2">= </span><span class="s4">20</span><span class="s2">.</span><span class="s1">sp</span><span class="s2">,</span>
+                    <span class="s2">)</span>
+                <span class="s2">}</span>
+            <span class="s2">}</span>
+
+            <span class="s1">Spacer</span><span class="s2">(</span><span class="s1">modifier </span><span class="s2">= </span><span class="s1">Modifier</span><span class="s2">.</span><span class="s1">height</span><span class="s2">(</span><span class="s1">smallPadding</span><span class="s2">))</span>
+            <span class="s1">Divider</span><span class="s2">()</span>
+
+            <span class="s1">Column</span><span class="s2">(</span>
+                <span class="s1">modifier </span><span class="s2">= </span><span class="s1">Modifier</span><span class="s2">.</span><span class="s1">verticalScroll</span><span class="s2">(</span><span class="s1">rememberScrollState</span><span class="s2">())</span>
+            <span class="s2">) {</span>
+                <span class="s0">for </span><span class="s2">(</span><span class="s1">subDeck </span><span class="s0">in </span><span class="s1">uiState</span><span class="s2">.</span><span class="s1">subDecks</span><span class="s2">) {</span>
+                    <span class="s1">Card</span><span class="s2">(</span>
+                        <span class="s1">modifier </span><span class="s2">= </span><span class="s1">Modifier</span>
+                            <span class="s2">.</span><span class="s1">height</span><span class="s2">(</span><span class="s4">64</span><span class="s2">.</span><span class="s1">dp</span><span class="s2">)</span>
+                            <span class="s2">.</span><span class="s1">fillMaxWidth</span><span class="s2">()</span>
+                            <span class="s2">.</span><span class="s1">padding</span><span class="s2">(</span><span class="s1">top </span><span class="s2">= </span><span class="s1">smallPadding</span><span class="s2">, </span><span class="s1">start </span><span class="s2">= </span><span class="s1">smallPadding</span><span class="s2">, </span><span class="s1">end </span><span class="s2">= </span><span class="s1">smallPadding</span><span class="s2">)</span>
+                            <span class="s2">.</span><span class="s1">combinedClickable</span><span class="s2">(</span>
+                                <span class="s1">onClick </span><span class="s2">= { </span><span class="s1">viewModel</span><span class="s2">.</span><span class="s1">toggleUploadCsvFileDialog</span><span class="s2">() },</span>
+                            <span class="s2">)</span>
+                    <span class="s2">) {</span>
+                        <span class="s1">Row</span><span class="s2">(</span>
+                            <span class="s1">verticalAlignment </span><span class="s2">= </span><span class="s1">Alignment</span><span class="s2">.</span><span class="s1">CenterVertically</span><span class="s2">,</span>
+                            <span class="s1">modifier </span><span class="s2">= </span><span class="s1">Modifier</span>
+                                <span class="s2">.</span><span class="s1">fillMaxSize</span><span class="s2">()</span>
+                                <span class="s2">.</span><span class="s1">padding</span><span class="s2">(</span>
+                                    <span class="s1">top </span><span class="s2">= </span><span class="s1">mediumPadding</span><span class="s2">,</span>
+                                    <span class="s1">start </span><span class="s2">= </span><span class="s1">mediumPadding</span><span class="s2">,</span>
+                                    <span class="s1">bottom </span><span class="s2">= </span><span class="s1">mediumPadding</span>
+                                <span class="s2">)</span>
+                        <span class="s2">) {</span>
+                            <span class="s1">Text</span><span class="s2">(</span>
+                                <span class="s1">text </span><span class="s2">= </span><span class="s1">subDeck</span><span class="s2">.</span><span class="s1">type</span><span class="s2">.</span><span class="s1">name</span><span class="s2">.</span><span class="s1">substring</span><span class="s2">(</span><span class="s4">0</span><span class="s2">..</span><span class="s4">0</span><span class="s2">),</span>
+                                <span class="s1">fontSize </span><span class="s2">= </span><span class="s4">20</span><span class="s2">.</span><span class="s1">sp</span><span class="s2">,</span>
+                            <span class="s2">)</span>
+                            <span class="s1">Spacer</span><span class="s2">(</span><span class="s1">modifier </span><span class="s2">= </span><span class="s1">Modifier</span><span class="s2">.</span><span class="s1">width</span><span class="s2">(</span><span class="s1">mediumPadding</span><span class="s2">))</span>
+                            <span class="s1">Text</span><span class="s2">(</span>
+                                <span class="s1">text </span><span class="s2">= </span><span class="s1">subDeck</span><span class="s2">.</span><span class="s1">name</span><span class="s2">,</span>
+                                <span class="s1">fontSize </span><span class="s2">= </span><span class="s4">20</span><span class="s2">.</span><span class="s1">sp</span><span class="s2">,</span>
+                                <span class="s1">overflow </span><span class="s2">= </span><span class="s1">TextOverflow</span><span class="s2">.</span><span class="s1">Ellipsis</span><span class="s2">,</span>
+                            <span class="s2">)</span>
+                            <span class="s1">Spacer</span><span class="s2">(</span><span class="s1">modifier </span><span class="s2">= </span><span class="s1">Modifier</span><span class="s2">.</span><span class="s1">weight</span><span class="s2">(</span><span class="s4">1f</span><span class="s2">))</span>
+                            <span class="s1">IconButton</span><span class="s2">(</span>
+                                <span class="s1">onClick </span><span class="s2">= { </span><span class="s1">viewModel</span><span class="s2">.</span><span class="s1">removeSubDeck</span><span class="s2">(</span><span class="s1">subDeck</span><span class="s2">) },</span>
+                            <span class="s2">) {</span>
+                                <span class="s1">Icon</span><span class="s2">(</span>
+                                    <span class="s1">imageVector </span><span class="s2">= </span><span class="s1">Icons</span><span class="s2">.</span><span class="s1">Default</span><span class="s2">.</span><span class="s1">Clear</span><span class="s2">,</span>
+                                    <span class="s1">contentDescription </span><span class="s2">= </span><span class="s3">&quot;Delete&quot;</span><span class="s2">,</span>
+                                <span class="s2">)</span>
+                            <span class="s2">}</span>
+                        <span class="s2">}</span>
+                    <span class="s2">}</span>
+                <span class="s2">}</span>
+                <span class="s1">Spacer</span><span class="s2">(</span><span class="s1">modifier </span><span class="s2">= </span><span class="s1">Modifier</span><span class="s2">.</span><span class="s1">height</span><span class="s2">(</span><span class="s1">smallPadding</span><span class="s2">))</span>
+            <span class="s2">}</span>
+        <span class="s2">}</span>
+    <span class="s2">}</span>
+
+    <span class="s0">if </span><span class="s2">(</span><span class="s1">uiState</span><span class="s2">.</span><span class="s1">isBringFromDecksScreenOpen</span><span class="s2">) {</span>
+        <span class="s1">BringFromDecksScreen</span><span class="s2">(</span>
+            <span class="s1">onDismissRequest </span><span class="s2">= { </span><span class="s1">viewModel</span><span class="s2">.</span><span class="s1">toggleBringFromDecksScreen</span><span class="s2">() },</span>
+            <span class="s1">bundles </span><span class="s2">= </span><span class="s1">uiState</span><span class="s2">.</span><span class="s1">bundles</span><span class="s2">,</span>
+            <span class="s1">decks </span><span class="s2">= </span><span class="s1">uiState</span><span class="s2">.</span><span class="s1">decks</span><span class="s2">,</span>
+            <span class="s1">excludeMastered </span><span class="s2">= </span><span class="s1">uiState</span><span class="s2">.</span><span class="s1">excludeMastered</span><span class="s2">,</span>
+            <span class="s1">resetHistory </span><span class="s2">= </span><span class="s1">uiState</span><span class="s2">.</span><span class="s1">resetHistory</span><span class="s2">,</span>
+            <span class="s1">onSelectClicked </span><span class="s2">= {</span>
+                <span class="s1">coroutineScope</span><span class="s2">.</span><span class="s1">launch </span><span class="s2">{</span>
+                    <span class="s1">viewModel</span><span class="s2">.</span><span class="s1">toggleBringFromDecksScreen</span><span class="s2">()</span>
+                    <span class="s1">viewModel</span><span class="s2">.</span><span class="s1">addSubDeck</span><span class="s2">(</span>
+                        <span class="s1">SubDeck</span><span class="s2">(</span>
+                            <span class="s1">name </span><span class="s2">= </span><span class="s1">it</span><span class="s2">.</span><span class="s1">name</span><span class="s2">,</span>
+                            <span class="s1">type </span><span class="s2">= </span><span class="s1">SubDeckType</span><span class="s2">.</span><span class="s1">DEFAULT</span><span class="s2">,</span>
+                            <span class="s1">cards </span><span class="s2">= </span><span class="s1">viewModel</span><span class="s2">.</span><span class="s1">getAllCardsFromDeck</span><span class="s2">(</span><span class="s1">it</span><span class="s2">),</span>
+                        <span class="s2">)</span>
+                    <span class="s2">)</span>
+                <span class="s2">}</span>
+            <span class="s2">},</span>
+            <span class="s1">setExcludeMastered </span><span class="s2">= { </span><span class="s1">viewModel</span><span class="s2">.</span><span class="s1">setExcludeMastered</span><span class="s2">(</span><span class="s1">it</span><span class="s2">) },</span>
+            <span class="s1">setResetHistory </span><span class="s2">= { </span><span class="s1">viewModel</span><span class="s2">.</span><span class="s1">setResetHistory</span><span class="s2">(</span><span class="s1">it</span><span class="s2">) },</span>
+        <span class="s2">)</span>
+    <span class="s2">}</span>
+<span class="s2">}</span>
+
+<span class="s1">@OptIn</span><span class="s2">(</span><span class="s1">ExperimentalFoundationApi::</span><span class="s0">class</span><span class="s2">)</span>
+<span class="s1">@Composable</span>
+<span class="s0">fun </span><span class="s1">BringFromDecksScreen</span><span class="s2">(</span>
+    <span class="s1">onDismissRequest: </span><span class="s2">() -&gt; </span><span class="s1">Unit</span><span class="s2">,</span>
+    <span class="s1">bundles: List</span><span class="s2">&lt;</span><span class="s1">BundleWithDecks</span><span class="s2">&gt;,</span>
+    <span class="s1">decks: List</span><span class="s2">&lt;</span><span class="s1">Deck</span><span class="s2">&gt;,</span>
+    <span class="s1">excludeMastered: Boolean</span><span class="s2">,</span>
+    <span class="s1">resetHistory: Boolean</span><span class="s2">,</span>
+    <span class="s1">onSelectClicked: </span><span class="s2">(</span><span class="s1">Deck</span><span class="s2">) -&gt; </span><span class="s1">Unit</span><span class="s2">,</span>
+    <span class="s1">setExcludeMastered: </span><span class="s2">(</span><span class="s1">Boolean</span><span class="s2">) -&gt; </span><span class="s1">Unit</span><span class="s2">,</span>
+    <span class="s1">setResetHistory: </span><span class="s2">(</span><span class="s1">Boolean</span><span class="s2">) -&gt; </span><span class="s1">Unit</span><span class="s2">,</span>
+    <span class="s2">) {</span>
+    <span class="s1">Box</span><span class="s2">(</span><span class="s1">modifier </span><span class="s2">= </span><span class="s1">Modifier</span>
+        <span class="s2">.</span><span class="s1">fillMaxSize</span><span class="s2">()</span>
+        <span class="s2">.</span><span class="s1">background</span><span class="s2">(</span><span class="s1">Color</span><span class="s2">(</span><span class="s4">0</span><span class="s2">, </span><span class="s4">0</span><span class="s2">, </span><span class="s4">0</span><span class="s2">, </span><span class="s4">127</span><span class="s2">))) {}</span>
+    <span class="s1">Dialog</span><span class="s2">(</span><span class="s1">onDismissRequest </span><span class="s2">= { </span><span class="s1">onDismissRequest</span><span class="s2">() }) {</span>
+
+        <span class="s0">val </span><span class="s1">smallPadding </span><span class="s2">= </span><span class="s1">dimensionResource</span><span class="s2">(</span><span class="s1">R</span><span class="s2">.</span><span class="s1">dimen</span><span class="s2">.</span><span class="s1">padding_small</span><span class="s2">)</span>
+        <span class="s0">val </span><span class="s1">mediumPadding </span><span class="s2">= </span><span class="s1">dimensionResource</span><span class="s2">(</span><span class="s1">R</span><span class="s2">.</span><span class="s1">dimen</span><span class="s2">.</span><span class="s1">padding_medium</span><span class="s2">)</span>
+
+        <span class="s0">var </span><span class="s1">dropdownMenuWidth by remember </span><span class="s2">{ </span><span class="s1">mutableIntStateOf</span><span class="s2">(</span><span class="s4">0</span><span class="s2">) }</span>
+
+        <span class="s0">var </span><span class="s1">dropdownMenuState by remember </span><span class="s2">{ </span><span class="s1">mutableStateOf</span><span class="s2">(</span><span class="s4">0</span><span class="s2">) }</span>
+        <span class="s0">var </span><span class="s1">selectedBundle by remember </span><span class="s2">{ </span><span class="s1">mutableStateOf</span><span class="s2">&lt;</span><span class="s1">BundleWithDecks?</span><span class="s2">&gt;(</span><span class="s0">null</span><span class="s2">) }</span>
+        <span class="s0">var </span><span class="s1">selectedDeck by remember </span><span class="s2">{ </span><span class="s1">mutableStateOf</span><span class="s2">&lt;</span><span class="s1">Deck?</span><span class="s2">&gt;(</span><span class="s0">null</span><span class="s2">) }</span>
+
+        <span class="s1">Card</span><span class="s2">(</span>
+            <span class="s1">colors </span><span class="s2">= </span><span class="s1">CardDefaults</span><span class="s2">.</span><span class="s1">cardColors</span><span class="s2">(</span>
+                <span class="s1">containerColor </span><span class="s2">= </span><span class="s1">MaterialTheme</span><span class="s2">.</span><span class="s1">colorScheme</span><span class="s2">.</span><span class="s1">primaryContainer</span><span class="s2">,</span>
+                <span class="s1">contentColor </span><span class="s2">= </span><span class="s1">MaterialTheme</span><span class="s2">.</span><span class="s1">colorScheme</span><span class="s2">.</span><span class="s1">primary</span><span class="s2">,</span>
+            <span class="s2">),</span>
+            <span class="s1">modifier </span><span class="s2">= </span><span class="s1">Modifier</span>
+                <span class="s2">.</span><span class="s1">fillMaxWidth</span><span class="s2">()</span>
+                <span class="s2">.</span><span class="s1">height</span><span class="s2">(</span><span class="s4">480</span><span class="s2">.</span><span class="s1">dp</span><span class="s2">)</span>
+                <span class="s2">.</span><span class="s1">padding</span><span class="s2">(</span><span class="s1">mediumPadding</span><span class="s2">)</span>
+        <span class="s2">) {</span>
+            <span class="s1">Column</span><span class="s2">(</span>
+                <span class="s1">verticalArrangement </span><span class="s2">= </span><span class="s1">Arrangement</span><span class="s2">.</span><span class="s1">SpaceBetween</span><span class="s2">,</span>
+                <span class="s1">horizontalAlignment </span><span class="s2">= </span><span class="s1">Alignment</span><span class="s2">.</span><span class="s1">CenterHorizontally</span><span class="s2">,</span>
+                <span class="s1">modifier </span><span class="s2">= </span><span class="s1">Modifier</span>
+                    <span class="s2">.</span><span class="s1">padding</span><span class="s2">(</span><span class="s1">mediumPadding</span><span class="s2">)</span>
+                    <span class="s2">.</span><span class="s1">fillMaxSize</span><span class="s2">()</span>
+
+
+            <span class="s2">) {</span>
+                <span class="s1">Text</span><span class="s2">(</span>
+                    <span class="s1">text </span><span class="s2">= </span><span class="s3">&quot;Choose deck:&quot;</span><span class="s2">,</span>
+                    <span class="s1">fontSize </span><span class="s2">= </span><span class="s4">24</span><span class="s2">.</span><span class="s1">sp</span><span class="s2">,</span>
+                    <span class="s1">textAlign </span><span class="s2">= </span><span class="s1">TextAlign</span><span class="s2">.</span><span class="s1">Center</span><span class="s2">,</span>
+                <span class="s2">)</span>
+
+                <span class="s1">Spacer</span><span class="s2">(</span><span class="s1">modifier </span><span class="s2">= </span><span class="s1">Modifier</span><span class="s2">.</span><span class="s1">height</span><span class="s2">(</span><span class="s1">mediumPadding</span><span class="s2">))</span>
+                <span class="s1">Column</span><span class="s2">(</span>
+                    <span class="s1">modifier </span><span class="s2">= </span><span class="s1">Modifier</span>
+                        <span class="s2">.</span><span class="s1">fillMaxWidth</span><span class="s2">()</span>
+                        <span class="s2">.</span><span class="s1">height</span><span class="s2">(</span><span class="s4">86</span><span class="s2">.</span><span class="s1">dp</span><span class="s2">)</span>
+                <span class="s2">) {</span>
+                    <span class="s1">Text</span><span class="s2">(</span>
+                        <span class="s1">text </span><span class="s2">= </span><span class="s3">&quot;Bundle (optional)&quot;</span><span class="s2">,</span>
+                        <span class="s1">fontSize </span><span class="s2">= </span><span class="s4">16</span><span class="s2">.</span><span class="s1">sp</span><span class="s2">,</span>
+                    <span class="s2">)</span>
+                    <span class="s1">Spacer</span><span class="s2">(</span><span class="s1">modifier </span><span class="s2">= </span><span class="s1">Modifier</span><span class="s2">.</span><span class="s1">height</span><span class="s2">(</span><span class="s1">smallPadding</span><span class="s2">))</span>
+                    <span class="s1">Card</span><span class="s2">(</span>
+                        <span class="s1">modifier </span><span class="s2">= </span><span class="s1">Modifier</span>
+                            <span class="s2">.</span><span class="s1">fillMaxSize</span><span class="s2">()</span>
+                            <span class="s2">.</span><span class="s1">onGloballyPositioned </span><span class="s2">{ </span><span class="s1">coordinates </span><span class="s2">-&gt;</span>
+                                <span class="s1">dropdownMenuWidth </span><span class="s2">= </span><span class="s1">coordinates</span><span class="s2">.</span><span class="s1">size</span><span class="s2">.</span><span class="s1">width</span>
+                            <span class="s2">}</span>
+                            <span class="s2">.</span><span class="s1">combinedClickable</span><span class="s2">(</span>
+                                <span class="s1">onClick </span><span class="s2">= { </span><span class="s1">dropdownMenuState </span><span class="s2">= </span><span class="s4">1 </span><span class="s2">},</span>
+                            <span class="s2">)</span>
+                    <span class="s2">) {</span>
+                        <span class="s1">Row</span><span class="s2">(</span>
+                            <span class="s1">verticalAlignment </span><span class="s2">= </span><span class="s1">Alignment</span><span class="s2">.</span><span class="s1">CenterVertically</span><span class="s2">,</span>
+                            <span class="s1">modifier </span><span class="s2">= </span><span class="s1">Modifier</span>
+                                <span class="s2">.</span><span class="s1">fillMaxSize</span><span class="s2">()</span>
+                                <span class="s2">.</span><span class="s1">padding</span><span class="s2">(</span><span class="s1">horizontal </span><span class="s2">= </span><span class="s1">mediumPadding</span><span class="s2">)</span>
+                        <span class="s2">) {</span>
+                            <span class="s1">Text</span><span class="s2">(</span>
+                                <span class="s1">text </span><span class="s2">= </span><span class="s1">selectedBundle?</span><span class="s2">.</span><span class="s1">bundle?</span><span class="s2">.</span><span class="s1">name ?: </span><span class="s3">&quot;None&quot;</span>
+                            <span class="s2">)</span>
+                            <span class="s1">Spacer</span><span class="s2">(</span><span class="s1">modifier </span><span class="s2">= </span><span class="s1">Modifier</span><span class="s2">.</span><span class="s1">weight</span><span class="s2">(</span><span class="s4">1f</span><span class="s2">))</span>
+                            <span class="s1">Icon</span><span class="s2">(</span>
+                                <span class="s1">imageVector </span><span class="s2">= </span><span class="s0">if </span><span class="s2">(</span><span class="s1">dropdownMenuState </span><span class="s2">== </span><span class="s4">1</span><span class="s2">) </span><span class="s1">Icons</span><span class="s2">.</span><span class="s1">Default</span><span class="s2">.</span><span class="s1">KeyboardArrowUp </span><span class="s0">else </span><span class="s1">Icons</span><span class="s2">.</span><span class="s1">Default</span><span class="s2">.</span><span class="s1">KeyboardArrowDown</span><span class="s2">,</span>
+                                <span class="s1">contentDescription </span><span class="s2">= </span><span class="s3">&quot;Expand&quot;</span>
+                            <span class="s2">)</span>
+                        <span class="s2">}</span>
+                    <span class="s2">}</span>
+                    <span class="s1">DropdownMenu</span><span class="s2">(</span>
+                        <span class="s1">expanded </span><span class="s2">= </span><span class="s1">dropdownMenuState </span><span class="s2">== </span><span class="s4">1</span><span class="s2">,</span>
+                        <span class="s1">onDismissRequest </span><span class="s2">= { </span><span class="s1">dropdownMenuState </span><span class="s2">= </span><span class="s4">0 </span><span class="s2">},</span>
+                        <span class="s1">modifier </span><span class="s2">= </span><span class="s1">Modifier</span>
+                            <span class="s2">.</span><span class="s1">width</span><span class="s2">(</span><span class="s1">with</span><span class="s2">(</span><span class="s1">LocalDensity</span><span class="s2">.</span><span class="s1">current</span><span class="s2">) { </span><span class="s1">dropdownMenuWidth</span><span class="s2">.</span><span class="s1">toDp</span><span class="s2">() })</span>
+                            <span class="s2">.</span><span class="s1">heightIn</span><span class="s2">(</span><span class="s4">0</span><span class="s2">.</span><span class="s1">dp</span><span class="s2">, </span><span class="s4">240</span><span class="s2">.</span><span class="s1">dp</span><span class="s2">)</span>
+                    <span class="s2">) {</span>
+                        <span class="s1">DropdownMenuItem</span><span class="s2">(</span>
+                            <span class="s1">text </span><span class="s2">= { </span><span class="s1">Text</span><span class="s2">(</span><span class="s1">text </span><span class="s2">= </span><span class="s3">&quot;None&quot;</span><span class="s2">) },</span>
+                            <span class="s1">onClick </span><span class="s2">= {</span>
+                                <span class="s0">if </span><span class="s2">(</span><span class="s1">selectedBundle </span><span class="s2">!= </span><span class="s0">null</span><span class="s2">) </span><span class="s1">selectedDeck </span><span class="s2">= </span><span class="s0">null</span>
+                                <span class="s1">selectedBundle </span><span class="s2">= </span><span class="s0">null</span>
+                                <span class="s1">dropdownMenuState </span><span class="s2">= </span><span class="s4">0</span>
+                            <span class="s2">},</span>
+                        <span class="s2">)</span>
+                        <span class="s0">for </span><span class="s2">(</span><span class="s1">bundle </span><span class="s0">in </span><span class="s1">bundles</span><span class="s2">) {</span>
+                            <span class="s1">DropdownMenuItem</span><span class="s2">(</span>
+                                <span class="s1">text </span><span class="s2">= { </span><span class="s1">Text</span><span class="s2">(</span><span class="s1">text </span><span class="s2">= </span><span class="s1">bundle</span><span class="s2">.</span><span class="s1">bundle</span><span class="s2">.</span><span class="s1">name</span><span class="s2">) },</span>
+                                <span class="s1">onClick </span><span class="s2">= { </span><span class="s1">selectedBundle </span><span class="s2">= </span><span class="s1">bundle</span><span class="s2">; </span><span class="s1">dropdownMenuState </span><span class="s2">= </span><span class="s4">0 </span><span class="s2">},</span>
+                            <span class="s2">)</span>
+                        <span class="s2">}</span>
+                    <span class="s2">}</span>
+                <span class="s2">}</span>
+
+                <span class="s1">Spacer</span><span class="s2">(</span><span class="s1">modifier </span><span class="s2">= </span><span class="s1">Modifier</span><span class="s2">.</span><span class="s1">height</span><span class="s2">(</span><span class="s1">mediumPadding</span><span class="s2">))</span>
+                <span class="s1">Column</span><span class="s2">(</span>
+                    <span class="s1">modifier </span><span class="s2">= </span><span class="s1">Modifier</span>
+                        <span class="s2">.</span><span class="s1">fillMaxWidth</span><span class="s2">()</span>
+                        <span class="s2">.</span><span class="s1">height</span><span class="s2">(</span><span class="s4">86</span><span class="s2">.</span><span class="s1">dp</span><span class="s2">)</span>
+                <span class="s2">) {</span>
+                    <span class="s1">Text</span><span class="s2">(</span>
+                        <span class="s1">text </span><span class="s2">= </span><span class="s3">&quot;Deck&quot;</span><span class="s2">,</span>
+                        <span class="s1">fontSize </span><span class="s2">= </span><span class="s4">16</span><span class="s2">.</span><span class="s1">sp</span><span class="s2">,</span>
+                    <span class="s2">)</span>
+                    <span class="s1">Spacer</span><span class="s2">(</span><span class="s1">modifier </span><span class="s2">= </span><span class="s1">Modifier</span><span class="s2">.</span><span class="s1">height</span><span class="s2">(</span><span class="s1">smallPadding</span><span class="s2">))</span>
+                    <span class="s1">Card</span><span class="s2">(</span>
+                        <span class="s1">modifier </span><span class="s2">= </span><span class="s1">Modifier</span>
+                            <span class="s2">.</span><span class="s1">fillMaxSize</span><span class="s2">()</span>
+                            <span class="s2">.</span><span class="s1">combinedClickable</span><span class="s2">(</span>
+                                <span class="s1">onClick </span><span class="s2">= { </span><span class="s1">dropdownMenuState </span><span class="s2">= </span><span class="s4">2 </span><span class="s2">},</span>
+                            <span class="s2">)</span>
+                    <span class="s2">) {</span>
+                        <span class="s1">Row</span><span class="s2">(</span>
+                            <span class="s1">verticalAlignment </span><span class="s2">= </span><span class="s1">Alignment</span><span class="s2">.</span><span class="s1">CenterVertically</span><span class="s2">,</span>
+                            <span class="s1">modifier </span><span class="s2">= </span><span class="s1">Modifier</span>
+                                <span class="s2">.</span><span class="s1">fillMaxSize</span><span class="s2">()</span>
+                                <span class="s2">.</span><span class="s1">padding</span><span class="s2">(</span><span class="s1">horizontal </span><span class="s2">= </span><span class="s1">mediumPadding</span><span class="s2">)</span>
+                        <span class="s2">) {</span>
+                            <span class="s1">Text</span><span class="s2">(</span>
+                                <span class="s1">text </span><span class="s2">= </span><span class="s1">selectedDeck?</span><span class="s2">.</span><span class="s1">name ?: </span><span class="s3">&quot;None&quot;</span>
+                            <span class="s2">)</span>
+                            <span class="s1">Spacer</span><span class="s2">(</span><span class="s1">modifier </span><span class="s2">= </span><span class="s1">Modifier</span><span class="s2">.</span><span class="s1">weight</span><span class="s2">(</span><span class="s4">1f</span><span class="s2">))</span>
+                            <span class="s1">Icon</span><span class="s2">(</span>
+                                <span class="s1">imageVector </span><span class="s2">= </span><span class="s0">if </span><span class="s2">(</span><span class="s1">dropdownMenuState </span><span class="s2">== </span><span class="s4">2</span><span class="s2">) </span><span class="s1">Icons</span><span class="s2">.</span><span class="s1">Default</span><span class="s2">.</span><span class="s1">KeyboardArrowUp </span><span class="s0">else </span><span class="s1">Icons</span><span class="s2">.</span><span class="s1">Default</span><span class="s2">.</span><span class="s1">KeyboardArrowDown</span><span class="s2">,</span>
+                                <span class="s1">contentDescription </span><span class="s2">= </span><span class="s3">&quot;Expand&quot;</span>
+                            <span class="s2">)</span>
+                        <span class="s2">}</span>
+                    <span class="s2">}</span>
+                    <span class="s1">DropdownMenu</span><span class="s2">(</span>
+                        <span class="s1">expanded </span><span class="s2">= </span><span class="s1">dropdownMenuState </span><span class="s2">== </span><span class="s4">2</span><span class="s2">,</span>
+                        <span class="s1">onDismissRequest </span><span class="s2">= { </span><span class="s1">dropdownMenuState </span><span class="s2">= </span><span class="s4">0 </span><span class="s2">},</span>
+                        <span class="s1">modifier </span><span class="s2">= </span><span class="s1">Modifier</span>
+                            <span class="s2">.</span><span class="s1">width</span><span class="s2">(</span><span class="s1">with</span><span class="s2">(</span><span class="s1">LocalDensity</span><span class="s2">.</span><span class="s1">current</span><span class="s2">) { </span><span class="s1">dropdownMenuWidth</span><span class="s2">.</span><span class="s1">toDp</span><span class="s2">() })</span>
+                            <span class="s2">.</span><span class="s1">heightIn</span><span class="s2">(</span><span class="s4">0</span><span class="s2">.</span><span class="s1">dp</span><span class="s2">, </span><span class="s4">240</span><span class="s2">.</span><span class="s1">dp</span><span class="s2">)</span>
+                    <span class="s2">) {</span>
+                        <span class="s0">var </span><span class="s1">n </span><span class="s2">= </span><span class="s4">0</span>
+                        <span class="s0">for </span><span class="s2">(</span><span class="s1">deck </span><span class="s0">in </span><span class="s1">decks</span><span class="s2">) {</span>
+                            <span class="s0">if </span><span class="s2">(</span><span class="s1">deck</span><span class="s2">.</span><span class="s1">bundleId </span><span class="s2">== (</span><span class="s1">selectedBundle?</span><span class="s2">.</span><span class="s1">bundle?</span><span class="s2">.</span><span class="s1">id ?: </span><span class="s2">-</span><span class="s4">1</span><span class="s2">)) {</span>
+                                <span class="s1">DropdownMenuItem</span><span class="s2">(</span>
+                                    <span class="s1">text </span><span class="s2">= { </span><span class="s1">Text</span><span class="s2">(</span><span class="s1">text </span><span class="s2">= </span><span class="s1">deck</span><span class="s2">.</span><span class="s1">name</span><span class="s2">) },</span>
+                                    <span class="s1">onClick </span><span class="s2">= { </span><span class="s1">selectedDeck </span><span class="s2">= </span><span class="s1">deck</span><span class="s2">; </span><span class="s1">dropdownMenuState </span><span class="s2">= </span><span class="s4">0 </span><span class="s2">},</span>
+                                <span class="s2">)</span>
+                                <span class="s1">n</span><span class="s2">++</span>
+                            <span class="s2">}</span>
+                        <span class="s2">}</span>
+                        <span class="s0">if </span><span class="s2">(</span><span class="s1">n </span><span class="s2">== </span><span class="s4">0</span><span class="s2">) {</span>
+                            <span class="s1">DropdownMenuItem</span><span class="s2">(</span>
+                                <span class="s1">text </span><span class="s2">= { </span><span class="s1">Text</span><span class="s2">(</span><span class="s1">text </span><span class="s2">= </span><span class="s3">&quot;None&quot;</span><span class="s2">) },</span>
+                                <span class="s1">onClick </span><span class="s2">= {</span>
+                                    <span class="s1">selectedDeck </span><span class="s2">= </span><span class="s0">null</span>
+                                    <span class="s1">dropdownMenuState </span><span class="s2">= </span><span class="s4">0</span>
+                                <span class="s2">},</span>
+                            <span class="s2">)</span>
+                        <span class="s2">}</span>
+                    <span class="s2">}</span>
+                <span class="s2">}</span>
+
+                <span class="s1">Spacer</span><span class="s2">(</span><span class="s1">modifier </span><span class="s2">= </span><span class="s1">Modifier</span><span class="s2">.</span><span class="s1">weight</span><span class="s2">(</span><span class="s4">1f</span><span class="s2">))</span>
+                <span class="s1">Row</span><span class="s2">(</span>
+                    <span class="s1">verticalAlignment </span><span class="s2">= </span><span class="s1">Alignment</span><span class="s2">.</span><span class="s1">CenterVertically</span><span class="s2">,</span>
+                    <span class="s1">modifier </span><span class="s2">= </span><span class="s1">Modifier</span>
+                        <span class="s2">.</span><span class="s1">fillMaxWidth</span><span class="s2">()</span>
+                <span class="s2">) {</span>
+                    <span class="s1">Switch</span><span class="s2">(</span>
+                        <span class="s1">checked </span><span class="s2">= </span><span class="s1">excludeMastered</span><span class="s2">,</span>
+                        <span class="s1">onCheckedChange </span><span class="s2">= { </span><span class="s1">setExcludeMastered</span><span class="s2">(</span><span class="s1">it</span><span class="s2">) },</span>
+                    <span class="s2">)</span>
+                    <span class="s1">Spacer</span><span class="s2">(</span><span class="s1">modifier </span><span class="s2">= </span><span class="s1">Modifier</span><span class="s2">.</span><span class="s1">width</span><span class="s2">(</span><span class="s1">mediumPadding</span><span class="s2">))</span>
+                    <span class="s1">Text</span><span class="s2">(</span>
+                        <span class="s1">text </span><span class="s2">= </span><span class="s3">&quot;Exclude mastered cards&quot;</span><span class="s2">,</span>
+                        <span class="s1">fontSize </span><span class="s2">= </span><span class="s4">16</span><span class="s2">.</span><span class="s1">sp</span><span class="s2">,</span>
+                    <span class="s2">)</span>
+                <span class="s2">}</span>
+                <span class="s1">Row</span><span class="s2">(</span>
+                    <span class="s1">verticalAlignment </span><span class="s2">= </span><span class="s1">Alignment</span><span class="s2">.</span><span class="s1">CenterVertically</span><span class="s2">,</span>
+                    <span class="s1">modifier </span><span class="s2">= </span><span class="s1">Modifier</span>
+                        <span class="s2">.</span><span class="s1">fillMaxWidth</span><span class="s2">()</span>
+                <span class="s2">) {</span>
+                    <span class="s1">Switch</span><span class="s2">(</span>
+                        <span class="s1">checked </span><span class="s2">= </span><span class="s1">resetHistory</span><span class="s2">,</span>
+                        <span class="s1">onCheckedChange </span><span class="s2">= { </span><span class="s1">setResetHistory</span><span class="s2">(</span><span class="s1">it</span><span class="s2">) },</span>
+                    <span class="s2">)</span>
+                    <span class="s1">Spacer</span><span class="s2">(</span><span class="s1">modifier </span><span class="s2">= </span><span class="s1">Modifier</span><span class="s2">.</span><span class="s1">width</span><span class="s2">(</span><span class="s1">mediumPadding</span><span class="s2">))</span>
+                    <span class="s1">Text</span><span class="s2">(</span>
+                        <span class="s1">text </span><span class="s2">= </span><span class="s3">&quot;Clear history&quot;</span><span class="s2">,</span>
+                        <span class="s1">fontSize </span><span class="s2">= </span><span class="s4">16</span><span class="s2">.</span><span class="s1">sp</span><span class="s2">,</span>
+                    <span class="s2">)</span>
+                <span class="s2">}</span>
+                <span class="s1">Spacer</span><span class="s2">(</span><span class="s1">modifier </span><span class="s2">= </span><span class="s1">Modifier</span><span class="s2">.</span><span class="s1">weight</span><span class="s2">(</span><span class="s4">1f</span><span class="s2">))</span>
+
+                <span class="s1">Row</span><span class="s2">(</span>
+                    <span class="s1">verticalAlignment </span><span class="s2">= </span><span class="s1">Alignment</span><span class="s2">.</span><span class="s1">CenterVertically</span><span class="s2">,</span>
+                    <span class="s1">horizontalArrangement </span><span class="s2">= </span><span class="s1">Arrangement</span><span class="s2">.</span><span class="s1">SpaceBetween</span><span class="s2">,</span>
+                    <span class="s1">modifier </span><span class="s2">= </span><span class="s1">Modifier</span>
+                        <span class="s2">.</span><span class="s1">fillMaxWidth</span><span class="s2">()</span>
+                <span class="s2">) {</span>
+                    <span class="s1">TextButton</span><span class="s2">(</span>
+                        <span class="s1">onClick </span><span class="s2">= </span><span class="s1">onDismissRequest</span>
+                    <span class="s2">) { </span><span class="s1">Text</span><span class="s2">(</span><span class="s3">&quot;Cancel&quot;</span><span class="s2">) }</span>
+                    <span class="s1">Button</span><span class="s2">(</span>
+                        <span class="s1">enabled </span><span class="s2">= </span><span class="s1">selectedDeck </span><span class="s2">!= </span><span class="s0">null</span><span class="s2">,</span>
+                        <span class="s1">onClick </span><span class="s2">= {</span>
+                            <span class="s1">onSelectClicked</span><span class="s2">(</span><span class="s1">selectedDeck</span><span class="s2">!!)</span>
+                        <span class="s2">}</span>
+                    <span class="s2">) { </span><span class="s1">Text</span><span class="s2">(</span><span class="s3">&quot;Select&quot;</span><span class="s2">) }</span>
+                <span class="s2">}</span>
+            <span class="s2">}</span>
+        <span class="s2">}</span>
+    <span class="s2">}</span>
+<span class="s2">}</span>
+
+<span class="s1">@Preview</span><span class="s2">(</span>
+    <span class="s1">showBackground </span><span class="s2">= </span><span class="s0">true</span><span class="s2">,</span>
+    <span class="s1">device </span><span class="s2">= </span><span class="s3">&quot;spec:width=393dp,height=808dp&quot;</span>
+    <span class="s5">//device = &quot;spec:width=650dp,height=900dp&quot;</span>
+    <span class="s5">//device = &quot;spec:orientation=landscape,width=393dp,height=808dp&quot;</span>
+<span class="s2">)</span>
+<span class="s1">@Composable</span>
+<span class="s0">fun </span><span class="s1">ImportCardsScreen</span><span class="s2">() {</span>
+    <span class="s1">FlashcardsTheme</span><span class="s2">() {</span>
+        <span class="s1">ImportCardsScreen</span><span class="s2">(</span><span class="s1">viewModel</span><span class="s2">(), {})</span>
+    <span class="s2">}</span>
+<span class="s2">}</span></pre>
+</body>
+</html>

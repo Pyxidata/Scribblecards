@@ -1,0 +1,175 @@
+<resources>
+    <string name="app_name">Scribblecards</string>
+
+    <string name="close">닫기</string>
+    <string name="cancel">취소</string>
+    <string name="confirm">확인</string>
+    <string name="save">저장</string>
+    <string name="save_changes">변경사항 저장</string>
+    <string name="selected_">개 선택</string>
+    <string name="move">이동</string>
+    <string name="import_">가져오기</string>
+    <string name="link">연동</string>
+    <string name="create">생성</string>
+    <string name="remove">제거</string>
+    <string name="delete">삭제</string>
+    <string name="quit">종료</string>
+    <string name="exit">나가기</string>
+    <string name="restart">다시하기</string>
+    <string name="start">시작</string>
+    <string name="plural_suffix"> </string>ㅁㄴㅇ
+    <string name="day">일</string>
+    <string name="hour">시간</string>
+    <string name="minute">분</string>
+
+    <string name="e_field_required">이 칸이 비어있습니다.</string>
+    <string name="e_field_required_sfx">&#160;- 이 칸이 비어있습니다.</string>
+
+    <string name="mms_cards">모아보기</string>
+    <string name="mms_priority">지금 공부할 카드들</string>
+    <string name="mms_priority_remaining">개 남음</string>
+    <string name="mms_settings">설정</string>
+    <string name="mms_credits">제작자</string>
+    <string name="mms_d_close">앱을 종료할까요?</string>
+
+    <string name="ss">설정</string>
+    <string name="ss_mastery">학습량</string>
+    <string name="ss_mastery_target">목표 학습 횟수</string>
+    <string name="ss_mastery_target_tip">각 카드를 연속으로 몇 번을 한번에 맞추는 것을 목표로 하나요?</string>
+    <string name="ss_mastery_time">시간에 따른 학습량 감소</string>
+    <string name="ss_mastery_time_tip">학습량을 서서히 감소시킴으로써 시간에 따라 학습한 내용을 잊는 효과를 반영합니다.</string>
+    <string name="ss_mastery_rate">학습량 감소 속도</string>
+    <string name="ss_mastery_rate_tip">학습량이 감소하는 속도를 설정합니다. 100%로 설정 시, 카드들은 기본적으로 시간당 학습량이 반씩 감소됩니다. 카드를 한번에 맟출 때마다 해당 카드의 학습량 감소 속도가 대폭 줄어듭니다.</string>
+    <string name="ss_primary">지금 공부할 카드들</string>
+    <string name="ss_primary_mastery">학습량 상한선</string>
+    <string name="ss_primary_mastery_tip">"지금 공부할 카드들"은 이 값 이하의 학습량을 가진 암기장들로 구성됩니다.</string>
+    <string name="ss_primary_cooldown">재학습 쿨타임</string>
+    <string name="ss_primary_cooldown_tip">암기장들은 최근 학습한지 이 이상의 시간이 지나지 않으면 "지금 공부할 카드들"에 다시 등장하지 않습니다.</string>
+    <string name="ss_language">언어</string>
+    <string name="ss_d_revert">기본 설정 값들로 복구할까요?</string>
+
+    <string name="ds">모아보기</string>
+    <string name="ds_e_deck_limit">암기장이 너무 많습니다 (최대&#160;</string>
+    <string name="ds_e_deck_limit_sfx">개).</string>
+    <string name="ds_tb_select_bundle">암기장 선택</string>
+    <string name="ds_ab_create_deck">새 암기장 만들기</string>
+    <string name="ds_ab_move_deck">새 묶음 만들기 / 묶음에 암기장 추가</string>
+    <string name="ds_d_create_bundle">새 묶음 이름:</string>
+    <string name="ds_d_bundle_name">묶음 이름</string>
+    <string name="ds_d_create_deck">새 암기장 이름:</string>
+    <string name="ds_d_deck_name">암기장 이름</string>
+
+    <string name="dk_d_tip">"하드모드" 선택 시 각 카드를 연속 2회씩 맞춰야 학습이 완료됩니다.</string>
+    <string name="dk_e_card_limit">카드가 너무 많습니다 (최대&#160;</string>
+    <string name="dk_e_card_limit_sfx">개).</string>
+    <string name="dk_card_total">개</string>
+    <string name="dk_cards_total">개</string>
+    <string name="dk_mastered">학습량</string>
+    <string name="dk_deck_hidden">암기장이 숨겨졌습니다.</string>
+    <string name="dk_new_deck">새로운 암기장입니다.</string>
+    <string name="dk_since_last_studied">경과</string>
+    <string name="dk_show_hints">힌트 기본 제공</string>
+    <string name="dk_show_examples">예시 기본 제공</string>
+    <string name="dk_flip_QnA">문제와 답 맞바꾸기</string>
+    <string name="dk_double_difficulty">하드모드</string>
+    <string name="dk_d_delete_deck">이 암기장을 삭제할까요?</string>
+    <string name="dk_d_no_undo">삭제 시 복구가 불가능합니다.</string>
+    <string name="dk_d_delete_card">선택된 카드들을 모두 삭제할까요?</string>
+
+    <string name="ec">카드 편집</string>
+    <string name="ec_question">문제</string>
+    <string name="ec_question_text">문제 텍스트</string>
+    <string name="ec_answer">답</string>
+    <string name="ec_answer_text">답 텍스트</string>
+    <string name="ec_hint">힌트 (선택)</string>
+    <string name="ec_hint_text">힌트 텍스트</string>
+    <string name="ec_example">예시 (선택)</string>
+    <string name="ec_example_text">예시 텍스트</string>
+    <string name="ec_clear_history">카드 기록 삭제하기</string>
+
+    <string name="cc">카드 만들기</string>
+
+    <string name="ic">카드들 가져오기</string>
+    <string name="ic_card">개</string>
+    <string name="ic_cards">개</string>
+    <string name="ic_import_from">&#160;- 출처:&#160;</string>
+    <string name="ic_imported_from_text">&#160;- 텍스트 변환</string>
+    <string name="ic_create_cards">카드들 생성</string>
+    <string name="ic_preview">미리보기 (첫 2개)</string>
+    <string name="ic_question">문제</string>
+    <string name="ic_answer">답</string>
+    <string name="ic_hint">힌트</string>
+    <string name="ic_example">예시</string>
+    <string name="ic_e_card_limit">카드가 너무 많습니다 (최대&#160;</string>
+    <string name="ic_e_card_limit_sfx">개).</string>
+    <string name="ic_e_no_cards">추가할 카드가 없습니다.</string>
+
+    <string name="ic_drive">구글 드라이브 연동</string>
+
+    <string name="ic_csv">.CSV 파일 업로드</string>
+    <string name="ic_csv_tip">엑셀 등 스프레스시트를 .CSV 파일 형식으로 가져와 카드들로 변환하는 방식.\n\n우선 해당 스프레드시트에 문제, 답, 힌트, 그리고 예시가 각자의 열에 있도록 확인합니다. 확인 시 .CSV 파일 형식으로 출력하여 이 앱으로 업로드합니다. 업로드 후 문제와 답 등의 열 번호를 각각 입력합니다. 알파벳 형식의 열을 사용할 경우 열 순서에 따른 숫자를 입력합니다 (A=1, B=2 등). 미리보기를 확인 후 가져오기를 누르면 작업이 완료됩니다.</string>
+    <string name="ic_csv_select_file">파일 선택하기</string>
+    <string name="ic_csv_e_file_empty">&#160;- 파일이 비어있습니다.</string>
+    <string name="ic_csv_e_file_incomplete">&#160;- 파일 내용이 불규칙적입니다.</string>
+    <string name="ic_csv_e_file_long">&#160;- 카드가 너무 많습니다 (첫&#160;</string>
+    <string name="ic_csv_e_file_long_sfx">개만 가져옵니다).</string>
+    <string name="ic_csv_e_file_large">&#160;- 파일이 너무 큽니다 (최대&#160;</string>
+    <string name="ic_csv_e_file_large_sfx">&#160;MB).</string>
+    <string name="ic_csv_e_file_invalid">&#160;- .CSV 파일이 아닙니다.</string>
+    <string name="ic_csv_no_file">선택된 파일이 없습니다.</string>
+    <string name="ic_csv_browse_file">파일 검색</string>
+    <string name="ic_csv_column_number">열 번호</string>
+    <string name="ic_csv_question_column">문제 열</string>
+    <string name="ic_csv_answer_column">답 열</string>
+    <string name="ic_csv_hint_column">힌트 열 (선택)</string>
+    <string name="ic_csv_example_column">예시 열 (선택)</string>
+
+    <string name="ic_text">텍스트를 복사해서 가져오기</string>
+    <string name="ic_text_tip">온라인 등에서 찾은 문제 및 답 리스트를 그대로 복사하여 카드들로 변환하는 방식. 해당 방식은 빠르고 단순한 작업을 위한 것이며, 더 정교한 작업은 .CSV 파일 업로드 방식을 추천합니다.\n\n우선 원하는 텍스트를 복사하여 이곳에 붙혀넣습니다. 해당 텍스트는 문제가 있는 줄과 답이 있는 줄이 반복되는 형태의 긴 리스트로 변형됩니다.\n\n첫번째 문제가 1번 줄에, 그 답은 2-3번 줄에, 두번째 문제가 4번 줄에 있는 등의 형식이라면 문제 줄은 1, 답 줄은 2-3으로 설정함으로써 첫번째 카드가 완성됩니다. 힌트나 예시가 있을 경우 같은 방식으로 설정합니다. 문제 번호 등 불필요한 줄들은 건너뛸 줄에 포함할 수 있습니다.\n\n첫 카드 생성에 사용된 패턴이 나머지 줄들에도 반영된다는 가정 하에 나머지 카드들은 따로 줄 번호를 설정할 필요 없이 자동으로 생성됩니다. 미리보기를 확인 후 가져오기를 누르면 작업이 완료됩니다.</string>
+    <string name="ic_text_text">텍스트</string>
+    <string name="ic_text_text_tip">외부 표나 리스트의 텍스트를 한번에 붙여넣기.</string>
+    <string name="ic_text_e_text_incomplete">텍스트가 불완전하거나 아래 정의된 규칙과 호환되지 않습니다.</string>
+    <string name="ic_text_e_text_long">너무 많은 카드가 생성됩니다 (최대:&#160;</string>
+    <string name="ic_text_e_text_long_sfx">개).</string>
+    <string name="ic_text_line_tip">다수의 줄 선택 시 \',\'와 \'-\'를 사용하세요.</string>
+    <string name="ic_text_e_line_overlap">줄은 중복선택이 불가합니다.</string>
+    <string name="ic_text_question_lines">문제 줄</string>
+    <string name="ic_text_answer_lines">답 줄</string>
+    <string name="ic_text_hint_lines">힌트 줄 (선택)</string>
+    <string name="ic_text_example_lines">예시 줄 (선택)</string>
+    <string name="ic_text_ignore_lines">건너뛸 줄 (선택)</string>
+
+    <string name="ic_deck">다른 암기장에서 가져오기</string>
+    <string name="ic_deck_bundle">묶음 (선택)</string>
+    <string name="ic_deck_none">없음</string>
+    <string name="ic_deck_expand">더보기</string>
+    <string name="ic_deck_deck">암기장</string>
+    <string name="ic_deck_filter_mastery">학습량 필터링</string>
+    <string name="ic_deck_max_mastery">학습량 상한선</string>
+    <string name="ic_deck_mastery">학습량</string>
+    <string name="ic_deck_clear_history">학습 기록 초기화</string>
+
+    <string name="pd">지금 공부할 카드들</string>
+    <string name="pd_deck_remaining">남음</string>
+    <string name="pd_decks_remaining">남음</string>
+    <string name="pd_よしよし">축하합니다! 지금 학습이 필요한 카드들을 모두 학습히였습니다.</string>
+
+    <string name="sss_quit">세션을 종료할까요?</string>
+    <string name="sss_record_will_be_lost">현 세션의 기록은 사라집니다.</string>
+    <string name="sss_restart">세선을 다시 시작할까요?</string>
+    <string name="sss_percent">% 완료</string>
+    <string name="sss_current">현재 카드:</string>
+    <string name="sss_upcoming">다음 카드들:</string>
+    <string name="sss_seen">지난 카드들:</string>
+    <string name="sss_completed">완료된 카드들:</string>
+    <string name="sss_new">NEW</string>
+    <string name="sss_hint">힌트 보기</string>
+    <string name="sss_example">예시 보기</string>
+
+    <string name="sms">세션 요약</string>
+    <string name="sms_studied">총 학습한 카드들:&#160;</string>
+    <string name="sms_perfect">한번에 맞춘 카드들:&#160;</string>
+    <string name="sms_save">이 세션 기억하기</string>
+    <string name="sms_save_tip">"이 세션을 기억함으로써 이번에 맞거나 틀린 카드들을 기반으로 학습량을 갱신합니다. 또한 해당 세션이 바르게 진행되지 않았을 경우 기억하지 않도록 설정하여 무효화 처리가 가능합니다."</string>
+
+</resources>
