@@ -24,7 +24,7 @@
   Requirements
 </h1>
 
-Targets Android 12 SDK (API level 32) or above
+Targets Android 8.1 SDK (API level 27) or above
 
 <h1 class="code-line">
   Development
@@ -41,12 +41,4 @@ Targets Android 12 SDK (API level 32) or above
   <code>Coroutine</code>, 
   <code>MVVM</code>,
   <code>Material 3</code>
-</p>
-  
-<h1 class="code-line">
-  Contact
-</h1>
-
-<p>
-  For inquires, bug reports, and issues, contact me via <a href="mailto:kevinmin1031@gmail.com" target="_blank">kevinmin1031@gmail.com</a>
 </p>
